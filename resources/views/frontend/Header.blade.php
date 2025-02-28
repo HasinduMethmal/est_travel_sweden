@@ -1,8 +1,8 @@
 
 
 
-   
-   
+
+
    <!--==============================
      Preloader
   ==============================-->
@@ -212,7 +212,7 @@
                         <div class="header-links">
                             <ul>
                                 <li class="d-none d-xl-inline-block" style="font-family: 'Madimi One', serif; opacity: 0.5;"><i class="fa-sharp fa-regular  fa-location-dot"></i>
-                                    <span>45 New Eskaton Road, Austria</span>
+                                    <span>Andra Långgatan 7413 03 Gotheburg Sweden</span>
                                 </li>
                                 <li class="d-none d-xl-inline-block" style="font-family: 'Madimi One', serif; opacity: 0.5;" ><i class="fa-regular fa-clock"></i>
                                     <span>Sun to Friday: 8.00 am - 7.00 pm</span>
@@ -265,147 +265,108 @@
                                                         <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-travel.jpg" alt="Home One">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="index.html" class="th-btn">View Demo</a>
-                                                                    </div>
+                                                                    <img src="{{asset('frontend/images/home_tour.png')  }}" alt="Home Two">
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="index.html"><span>01.</span>Home Travel</a></h3>
+                                                                <h3 class="mega-menu-title"><a href="{{ route('home.tour') }}"><span>02.</span>Home Tour</a></h3>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-tour.jpg" alt="Home Two">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-tour.html" class="th-btn ">View Demo</a>
-                                                                    </div>
+                                                                    <img src="{{asset('frontend/images/home_agency.png')  }}" alt="Home Three">
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="home-tour.html"><span>02.</span>Home Tour</a></h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-agency.jpg" alt="Home Three">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-agency.html" class="th-btn ">View Demo</a>
-                                                                    </div>
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a href="home-agency.html"><span>03.</span>Home Agency</a>
+                                                                <h3 class="mega-menu-title"><a href="{{ route('home.agency') }}"><span>03.</span>Home Agency</a>
                                                                 </h3>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-yacht.jpg" alt="Home Four">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-yacht.html" class="th-btn ">View Demo</a>
-                                                                    </div>
+                                                                    <img src="{{asset('frontend/images/home_yacht.png')  }}" alt="Home Four">
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="home-yacht.html"><span>04.</span>Home Yacht</a>
+                                                                <h3 class="mega-menu-title"><a href="{{ route('home.yacht') }}"><span>04.</span>Home Yacht</a>
                                                                 </h3>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-beach.jpg" alt="Home Five">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-beach.html" class="th-btn ">View Demo</a>
-                                                                    </div>
+                                                                    <img src="{{asset('frontend/images/home_beach.png')  }}" alt="Home Five">
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="home-beach.html"><span>05.</span>Home Beach</a>
+                                                                <h3 class="mega-menu-title"><a href="{{ route('home.beach') }}"><span>05.</span>Home Beach</a>
                                                                 </h3>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-resort.jpg" alt="Home Six">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-resort.html" class="th-btn ">View Demo</a>
-                                                                    </div>
+                                                                    <img src="{{asset('frontend/images/home_resort.png')  }}" alt="Home Six">
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="home-resort.html"><span>06.</span>Home resort</a>
+                                                                <h3 class="mega-menu-title"><a href="{{ route('home.resort') }}"><span>06.</span>Home resort</a>
                                                                 </h3>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-countryside-hotel.jpg" alt="Home Six">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-countryside-hotel.html" class="th-btn ">View
-                                                                            Demo</a>
-                                                                    </div>
+                                                                    <img src="{{asset('frontend/images/home_countryside.png')  }}" alt="Home Six">
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="home-countryside-hotel.html"><span>07.</span>Home
+                                                                <h3 class="mega-menu-title"><a href="{{ route('home.countryside') }}"><span>07.</span>Home
                                                                         Countryside Hotel</a></h3>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-forest.jpg" alt="Home Six">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-forest.html" class="th-btn ">View Demo</a>
-                                                                    </div>
+                                                                    <img src="{{asset('frontend/images/home_forest.png')  }}" alt="Home Six">
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="home-forest.html"><span>08.</span>Home Forest</a>
+                                                                <h3 class="mega-menu-title"><a href="{{ route('home.forest') }}"><span>08.</span>Home Forest</a>
                                                                 </h3>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
-                                                                    <img src="frontend/assets/img/pages/home-hiking.jpg" alt="Home Six">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-hiking.html" class="th-btn ">View Demo</a>
-                                                                    </div>
+                                                                    <img src="{{asset('frontend/images/home_hiking.png')  }}" alt="Home Six">
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="home-hiking.html"><span>09.</span>Home Hiking</a>
+                                                                <h3 class="mega-menu-title"><a href="{{ route('home.hiking') }}"><span>09.</span>Home Hiking</a>
                                                                 </h3>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-3">
+                                                        {{-- <div class="col-lg-3">
                                                             <div class="mega-menu-box">
                                                                 <div class="mega-menu-img">
                                                                     <img src="frontend/assets/img/pages/home-hiking-2.jpg" alt="Home ten">
-                                                                    <div class="btn-wrap">
-                                                                        <a target="_blank" href="home-hiking-2.html" class="th-btn ">View Demo</a>
-                                                                    </div>
                                                                 </div>
-                                                                <h3 class="mega-menu-title"><a href="home-hiking-2.html"><span>10.</span>Home Hiking Style 2</a>
+                                                                <h3 class="mega-menu-title"><a href=""><span>10.</span>Home Hiking Style 2</a>
                                                                 </h3>
                                                             </div>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
                                                 </div>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="{{ route('aboutUs') }}">About Us</a></li>
                                     <li class="menu-item-has-children">
                                         <a href="#">Destination</a>
                                         <ul class="sub-menu">
-                                            <li><a href="destination.html">Destination</a></li>
-                                            <li><a href="destination-details.html">Destination Details</a></li>
+                                            <li><a href="{{ route('destination.destination') }}">Destination</a></li>
+                                            <li><a href="{{ route('destination.details') }}">Destination Details</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="#">Service</a>
                                         <ul class="sub-menu">
-                                            <li><a href="{{ route('services') }}">Services</a></li>
-                                            <li><a href="{{ route('services-details') }}">Service Details</a></li>
+                                            <li><a href="{{ route('services.services') }}">Services</a></li>
+                                            <li><a href="{{ route('services.details') }}">Service Details</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="#">Activities</a>
                                         <ul class="sub-menu">
-                                            <li><a href= "{{ route('activities') }}" >activities</a></li>
-                                            <li><a href="{{ route('activities-details') }}" >activities Details</a></li>
+                                            <li><a href= "{{ route('activities.activities') }}" >activities</a></li>
+                                            <li><a href="{{ route('activities.details') }}" >activities Details</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
@@ -415,7 +376,7 @@
                                                 <a href="#">Shop</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="{{ route('shop') }}">Shop</a></li>
-                                                    <li><a href="{{ route('shop-details') }}">Shop Details</a></li>
+                                                    <li><a href="{{ route('shop.details') }}">Shop Details</a></li>
                                                     <li><a href="cart.html">Cart Page</a></li>
                                                     <li><a href="checkout.html">Checkout</a></li>
                                                     <li><a href="wishlist.html">Wishlist</a></li>

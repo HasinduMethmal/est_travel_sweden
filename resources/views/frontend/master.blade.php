@@ -2,9 +2,10 @@
 <html class="no-js" lang="zxx">
 
 <head>
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tourm - Travel & Tour Booking Agency HTML Template - Home Travel</title>
+    <title> BEST TIME TRAVEL</title>
     <meta name="author" content="Tourm">
     <meta name="description" content="Tourm - Travel & Tour Booking Agency HTML Template ">
     <meta name="keywords" content="Tourm - Travel & Tour Booking Agency HTML Template ">
@@ -57,15 +58,15 @@
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="frontend/assets/css/style.css">
-    
 
-</head> 
+
+</head>
 
 
 <body>
 
     <!--********************************
-   		Code Start From Here 
+   		Code Start From Here
 	******************************** -->
 
     <div class="magic-cursor relative z-10">

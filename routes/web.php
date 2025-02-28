@@ -1,53 +1,71 @@
 <?php
-
+use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Frontend\ActivityController;
+use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\DestinationController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\ServiceController;
+use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
- return view('frontend.Home');
+/*-------------------------------------frontend-----------------------------------start---------------*/
+
+
+
+Route::get('/',[IndexController::class,'index']);
+Route::prefix('home')->group(function(){
+    Route::get('/travel',[HomeController::class,'travel'])->name('home.travel');
+    Route::get('/agency',[HomeController::class,'agency'])->name('home.agency');
+    Route::get('/beach',[HomeController::class,'beach'])->name('home.beach');
+    Route::get('/countryside',[HomeController::class,'countryside'])->name('home.countryside');
+    Route::get('/forest',[HomeController::class,'forest'])->name('home.forest');
+    Route::get('/hiking',[HomeController::class,'hiking'])->name('home.hiking');
+    Route::get('/resort',[HomeController::class,'resort'])->name('home.resort');
+    Route::get('/tour',[HomeController::class,'tour'])->name('home.tour');
+    Route::get('/yacht',[HomeController::class,'yacht'])->name('home.yacht');
+});
+Route::get('/aboutUs',[AboutController::class,'index'])->name('aboutUs');
+Route::prefix('destination')->group(function(){
+    Route::get('/',[DestinationController::class,'destination'])->name('destination.destination');
+    Route::get('/details',[DestinationController::class,'destinationDetails'])->name('destination.details');
+
+});
+Route::get('/contact',[ContactController::class,'index'])->name('contact');
+Route::prefix('service')->group(function(){
+    Route::get('/',[ServiceController::class,'service'])->name('services.services');
+    Route::get('/details',[ServiceController::class,'serviceDetails'])->name('services.details');
+
+});
+Route::prefix('activities')->group(function(){
+    Route::get('/',[ActivityController::class,'activities'])->name('activities.activities');
+    Route::get('/details',[ActivityController::class,'activitiesDetails'])->name('activities.details');
+
+});
+Route::prefix('pages')->group(function(){
+    Route::prefix('shop')->group(function(){
+        Route::get('/',[ShopController::class,'shop'])->name('shop');
+        Route::get('/details',[ShopController::class,'shop'])->name('shop.details');
+    });
 });
 
-Route::get('/contact', function () {
-    return view('frontend.Contact');
-})->name('contact');
 
-Route::get('/services', function () {
-    return view('frontend.services.Services');
-})->name('services');
+/*-------------------------------------frontend------------------------------------end--------------*/
 
-Route::get('/shop', function () {
-    return view('frontend.shop.shop');
-})->name('shop');
-Route::get('/shop-details', function () {
-    return view('frontend.shop.shop-details');
-})->name('shop-details');
 
-Route::get('/services-details', function () {
-    return view('frontend.services.Services-Details');
-})->name('services-details');
 
-Route::get('/activities', function () {
-    return view('frontend.activities.activities');
-})->name('activities');
-
-Route::get('/activities-details', function () {
-    return view('frontend.activities.activities-details');
-})->name('activities-details');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

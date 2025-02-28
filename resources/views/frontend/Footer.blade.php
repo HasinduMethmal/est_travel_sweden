@@ -40,8 +40,8 @@
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
 
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About us</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="{{ route('aboutUs') }}">About us</a></li>
                                     <li><a href="service.html">Our Service</a></li>
                                     <li><a href="contact.html">Terms of Service</a></li>
                                     <li><a href="contact.html">Tour Booking Now</a></li>
