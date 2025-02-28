@@ -15,8 +15,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend.Home');
+ return view('frontend.Home');
 });
+
+Route::get('/contact', function () {
+    return view('frontend.Contact');
+})->name('contact');
+
+Route::get('/services', function () {
+    return view('frontend.services.Services');
+})->name('services');
+
+Route::get('/shop', function () {
+    return view('frontend.shop.shop');
+})->name('shop');
+Route::get('/shop-details', function () {
+    return view('frontend.shop.shop-details');
+})->name('shop-details');
+
+Route::get('/services-details', function () {
+    return view('frontend.services.Services-Details');
+})->name('services-details');
+
+Route::get('/activities', function () {
+    return view('frontend.activities.activities');
+})->name('activities');
+
+Route::get('/activities-details', function () {
+    return view('frontend.activities.activities-details');
+})->name('activities-details');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

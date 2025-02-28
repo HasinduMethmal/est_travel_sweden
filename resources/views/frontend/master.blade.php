@@ -29,7 +29,7 @@
     <link rel="icon" type="image/png" sizes="16x16"  href="{{ assert('frontend/assets/img/favicons/favicon-16x16.png') }}">
     <link rel="manifest" href="frontend/assets/img/favicons/manifest.json" href="{{ assert('frontend/assets/img/favicons/manifest.json') }}">
 
-
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
     <link rel="stylesheet" href="{{ assert('frontend/assets/css/swiper-bundle.min.css') }}">
 
     <meta name="msapplication-TileColor" content="#ffffff">
@@ -74,17 +74,17 @@
     </div>
 
 
-    @include('frontend.Header');
+    @include('frontend.Header')
 
 
 
     <div id='content'>
-        @yield('content');
+        @yield('content')
     </div>
 
 
 
-    @include('frontend.Footer');
+    @include('frontend.Footer')
 
 
 

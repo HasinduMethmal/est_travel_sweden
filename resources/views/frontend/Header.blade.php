@@ -1,4 +1,9 @@
-    <!--==============================
+
+
+
+   
+   
+   <!--==============================
      Preloader
   ==============================-->
   <div id="preloader" class="preloader ">
@@ -48,7 +53,7 @@
                 <div class="recent-post-wrap">
                     <div class="recent-post">
                         <div class="media-img">
-                            <a href="blog-details.html"><img src="frontend/assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a>
+                            <a href="blog-details.html"><img src="{{asset('frontend/assets/img/blog/recent-post-1-1.jpg')}}" alt="Blog Image"></a>
                         </div>
                         <div class="media-body">
                             <div class="recent-post-meta">
@@ -200,16 +205,16 @@
 	Header Area
 ==============================-->
     <header class="th-header header-layout1">
-        <div class="header-top">
+    <div class="header-top">
             <div class="container th-container">
                 <div class="row justify-content-center justify-content-xl-between align-items-center">
                     <div class="col-auto d-none d-md-block">
                         <div class="header-links">
                             <ul>
-                                <li class="d-none d-xl-inline-block"><i class="fa-sharp fa-regular  fa-location-dot"></i>
+                                <li class="d-none d-xl-inline-block" style="font-family: 'Madimi One', serif; opacity: 0.5;"><i class="fa-sharp fa-regular  fa-location-dot"></i>
                                     <span>45 New Eskaton Road, Austria</span>
                                 </li>
-                                <li class="d-none d-xl-inline-block"><i class="fa-regular fa-clock"></i>
+                                <li class="d-none d-xl-inline-block" style="font-family: 'Madimi One', serif; opacity: 0.5;" ><i class="fa-regular fa-clock"></i>
                                     <span>Sun to Friday: 8.00 am - 7.00 pm</span>
                                 </li>
                             </ul>
@@ -392,15 +397,15 @@
                                     <li class="menu-item-has-children">
                                         <a href="#">Service</a>
                                         <ul class="sub-menu">
-                                            <li><a href="service.html">Services</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
+                                            <li><a href="{{ route('services') }}">Services</a></li>
+                                            <li><a href="{{ route('services-details') }}">Service Details</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="#">Activities</a>
                                         <ul class="sub-menu">
-                                            <li><a href="activities.html">activities</a></li>
-                                            <li><a href="activities-details.html">activities Details</a></li>
+                                            <li><a href= "{{ route('activities') }}" >activities</a></li>
+                                            <li><a href="{{ route('activities-details') }}" >activities Details</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
@@ -409,8 +414,8 @@
                                             <li class="menu-item-has-children">
                                                 <a href="#">Shop</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-details.html">Shop Details</a></li>
+                                                    <li><a href="{{ route('shop') }}">Shop</a></li>
+                                                    <li><a href="{{ route('shop-details') }}">Shop Details</a></li>
                                                     <li><a href="cart.html">Cart Page</a></li>
                                                     <li><a href="checkout.html">Checkout</a></li>
                                                     <li><a href="wishlist.html">Wishlist</a></li>
@@ -439,15 +444,15 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="contact.html">Contact us</a>
+                                        <a href="{{ route('contact') }}">Contact us</a>
                                     </li>
                                 </ul>
                             </nav>
-                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"></i></button>
+                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars"  style="font-size:17px;"></i></button>
                         </div>
                         <div class="col-auto d-none d-xl-block">
                             <div class="header-button">
-                                <a href="contact.html" class="th-btn style3 th-icon">Book Now</a>
+                                <a href="{{ route('contact') }}" class="th-btn style3 th-icon" style=" font-family: 'Madimi One', serif;font-size:17px;">Book Now</a>
 
                             </div>
                         </div>
