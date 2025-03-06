@@ -1,10 +1,12 @@
 <!-- Menu -->
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-  <div class="app-brand demo">
-    <a href="index.html" class="app-brand-link">
-        <img class="img-fluid for-light for-dark" src="" style="width: 190px;">
+  <div class="app-brand demo " style="padding-top:5px;">
+    <a href="index.html" class="app-brand-link" style="display: inline-block; text-align: center; width: 100%;">
+      <img class="img-fluid for-light for-dark" src="{{asset('backend/assets/img/besttime-travel.png')}}" style="width: 100px; vertical-align: middle;">
     </a>
+  
+      
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
       <i class="ti menu-toggle-icon d-none d-xl-block align-middle"></i>

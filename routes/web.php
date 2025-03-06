@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\backend\Back_DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\Back_GuiderController;
@@ -21,11 +21,11 @@ use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\TourguideController;
 
 Route::prefix('dashboard')->group(function(){
-    Route::get('/', [AuthenticatedSessionController::class, 'showLoginForm'])->name('loginForm');
-    Route::post('/login', [AuthenticatedSessionController::class, 'login'])->name('login');
-    Route::post('/logout', [AuthenticatedSessionController::class, 'logout'])->name('logout');
-    Route::get('/signup', [AuthenticatedSessionController::class, 'showSignupForm'])->name('signupForm');
-    Route::post('/signup', [AuthenticatedSessionController::class, 'register'])->name('signup');
+    Route::get('/', [AuthController::class, 'showLoginForm'])->name('loginForm');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signupForm');
+    Route::post('/signup', [AuthController::class, 'register'])->name('signup');
 });
 
 
