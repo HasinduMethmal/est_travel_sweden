@@ -87,10 +87,11 @@ class Back_GuiderController extends Controller
     // Delete a guider
     public function destroy($id)
     {
+
         
         // Find guider by id or fail
         $guider = Guider::findOrFail($id);
-
+        dd($guider->name);
         // Delete the guider
         $guider->delete();
 
