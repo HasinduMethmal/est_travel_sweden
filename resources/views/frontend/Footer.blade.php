@@ -1,31 +1,19 @@
-
-    <footer class="footer-wrapper footer-layout1">
+   <footer class= "footer-wrapper bg-title footer-layout2" >
         <div class="widget-area">
             <div class="container">
-                <div class="newsletter-area">
-                    <div class="newsletter-top">
-                        <div class="row gy-4 align-items-center">
-                            <div class="col-lg-5">
-                                <h2 class="newsletter-title text-capitalize mb-0">get updated the latest newsletter</h2>
-                            </div>
-                            <div class="col-lg-7">
-                                <form class="newsletter-form">
-                                    <input class="form-control " type="email" placeholder="Enter Email" required="">
-                                    <button type="submit" class="th-btn style3">Subscribe Now <img src="frontend/assets/img/icon/plane.svg" alt=""></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+           
+
+
                 <div class="row justify-content-between">
                     <div class="col-md-6 col-xl-3">
                         <div class="widget footer-widget">
                             <div class="th-widget-about">
                                 <div class="about-logo">
-                                    <a href="home-travel.html"><img src="frontend/assets/img/logo3.svg" alt="Tourm"></a>
+                                    <a href="home-travel.html"><img src="frontend/assets/img/besttime-travel.png" alt="Tourm" style="width: 180px; height: auto;margin-top:-33px;margin-left:40px;"></a>
                                 </div>
-                                <p class="about-text">Rapidiously myocardinate cross-platform intellectual capital model. Appropriately create interactive infrastructures</p>
-                                <div class="th-social">
+                                <p class="about-text" style="margin-top:-60px;font-size:13px;">Rapidiously myocardinate cross-platform intellectual capital model. Appropriately create interactive infrastructures</p>
+                                <div class="th-social" style="margin-top:-10px;">
                                     <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
                                     <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
@@ -41,8 +29,8 @@
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
 
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About us</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="{{ route('aboutUs') }}">About us</a></li>
                                     <li><a href="service.html">Our Service</a></li>
                                     <li><a href="contact.html">Terms of Service</a></li>
                                     <li><a href="contact.html">Tour Booking Now</a></li>

@@ -1,31 +1,136 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\backend\Back_DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\Back_GuiderController;
+use App\Http\Controllers\backend\Back_PackageController;
+use App\Http\Controllers\backend\Back_DestinationController;
+use App\Http\Controllers\backend\Back_Service_Controller;
+use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Frontend\ActivityController;
+use App\Http\Controllers\Frontend\BooknowController;
+use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\DestinationController;
+use App\Http\Controllers\Frontend\GalleryController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\PricePackageController;
+use App\Http\Controllers\Frontend\ServiceController;
+use App\Http\Controllers\Frontend\ShopController;
+use App\Http\Controllers\Frontend\TourguideController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('frontend.Home');
+Route::prefix('dashboard')->group(function(){
+    Route::get('/', [AuthenticatedSessionController::class, 'showLoginForm'])->name('loginForm');
+    Route::post('/login', [AuthenticatedSessionController::class, 'login'])->name('login');
+    Route::post('/logout', [AuthenticatedSessionController::class, 'logout'])->name('logout');
+    Route::get('/signup', [AuthenticatedSessionController::class, 'showSignupForm'])->name('signupForm');
+    Route::post('/signup', [AuthenticatedSessionController::class, 'register'])->name('signup');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::middleware(['auth','isadmin'])->prefix('dashboard')->group(function () {
+        Route::get('/index',[Back_DashboardController::class,'index'])->name('dashboard.index');
+        Route::prefix('guider')->group(function(){
+            Route::get('/',[Back_GuiderController::class,'index'])->name('guider.index');
+            Route::get('/create',[Back_GuiderController::class,'create'])->name('guider.create');
+            Route::get('/edit',[Back_GuiderController::class,'edit'])->name('guider.edit');
+            Route::post('/store', [Back_GuiderController::class, 'store'])->name('guider.store');
+            Route::get('/edit/{id}', [Back_GuiderController::class, 'edit'])->name('guider.edit');
+            Route::put('/update/{id}', [Back_GuiderController::class, 'update'])->name('guider.update');
+            Route::delete('/destroy/{id}', [Back_GuiderController::class, 'destroy'])->name('guider.destroy');
+            Route::get('/show/{id}', [Back_GuiderController::class, 'show'])->name('guider.show');
+    
+        });
+    
+        Route::prefix('package')->group(function(){
+            Route::get('/',[Back_PackageController::class,'index'])->name('package.index');
+            Route::get('/create',[Back_PackageController::class,'create'])->name('package.create');
+            Route::get('/edit',[Back_PackageController::class,'edit'])->name('package.edit');
+            Route::post('/store', [Back_PackageController::class, 'store'])->name('package.store');
+            Route::get('/edit/{id}', [Back_PackageController::class, 'edit'])->name('package.edit');
+            Route::put('/update/{id}', [Back_PackageController::class, 'update'])->name('package.update');
+            Route::delete('/destroy/{id}', [Back_PackageController::class, 'destroy'])->name('package.destroy');
+        
+        });
+        
+        Route::prefix('destination')->group(function(){
+            Route::get('/',[Back_DestinationController::class,'index'])->name('back_destination.index');
+            Route::get('/create',[Back_DestinationController::class,'create'])->name('back_destination.create');
+            Route::get('/edit',[Back_DestinationController::class,'edit'])->name('back_destination.edit');
+            Route::post('/store', [Back_DestinationController::class, 'store'])->name('back_destination.store');
+            Route::get('/edit/{id}', [Back_DestinationController::class, 'edit'])->name('back_destination.edit');
+            Route::put('/update/{id}', [Back_DestinationController::class, 'update'])->name('back_destination.update');
+            Route::delete('/destroy/{id}', [Back_DestinationController::class, 'destroy'])->name('back_destination.destroy');
+            Route::get('/show/{id}', [Back_DestinationController::class, 'show'])->name('back_destination.show');
+    
+        });
+    
+        Route::prefix('service')->group(function(){
+            Route::get('/', [Back_Service_Controller::class, 'index'])->name('back_service.index');
+            Route::get('/create', [Back_Service_Controller::class, 'create'])->name('back_service.create');
+            Route::get('/edit/{id}', [Back_Service_Controller::class, 'edit'])->name('back_service.edit');
+            Route::post('/store', [Back_Service_Controller::class, 'store'])->name('back_service.store');
+            Route::put('/update/{id}', [Back_Service_Controller::class, 'update'])->name('back_service.update');
+            Route::delete('/destroy/{id}', [Back_Service_Controller::class, 'destroy'])->name('back_service.destroy');
+        });
+
 });
 
-require __DIR__.'/auth.php';
+
+
+
+Route::get('/',[IndexController::class,'index']);
+Route::prefix('home')->group(function(){
+    Route::get('/travel',[HomeController::class,'travel'])->name('home.travel');
+    Route::get('/agency',[HomeController::class,'agency'])->name('home.agency');
+    Route::get('/beach',[HomeController::class,'beach'])->name('home.beach');
+    Route::get('/countryside',[HomeController::class,'countryside'])->name('home.countryside');
+    Route::get('/forest',[HomeController::class,'forest'])->name('home.forest');
+    Route::get('/hiking',[HomeController::class,'hiking'])->name('home.hiking');
+    Route::get('/resort',[HomeController::class,'resort'])->name('home.resort');
+    Route::get('/tour',[HomeController::class,'tour'])->name('home.tour');
+    Route::get('/yacht',[HomeController::class,'yacht'])->name('home.yacht');
+});
+Route::get('/aboutUs',[AboutController::class,'index'])->name('aboutUs');
+
+Route::get('/gallery',[GalleryController::class,'index'])->name('gallery');
+Route::get('/booknow',[BooknowController::class,'index'])->name('booknow');
+Route::prefix('destination')->group(function(){
+    Route::get('/',[DestinationController::class,'destination'])->name('destination.destination');
+    Route::get('/details',[DestinationController::class,'destinationDetails'])->name('destination.details');
+
+});
+Route::prefix('tour-guide')->group(function(){
+    Route::get('/',[TourguideController::class,'tourguide'])->name('tourguide.tourguide');
+    Route::get('/details',[TourguideController::class,'tourguideDetails'])->name('tourguide.details');
+
+});
+Route::prefix('price-package')->group(function(){
+    Route::get('/',[PricePackageController::class,'pricepackage'])->name('pricepackage.pricepackage');
+ 
+
+});
+
+Route::prefix('tour-guide')->group(function(){
+    Route::get('/',[TourguideController::class,'tourguide'])->name('tourguide.tourguide');
+    Route::get('/details',[TourguideController::class,'tourguideDetails'])->name('tourguide.details');
+
+});
+Route::get('/contact',[ContactController::class,'index'])->name('contact');
+Route::prefix('service')->group(function(){
+    Route::get('/',[ServiceController::class,'service'])->name('services.services');
+    Route::get('/details',[ServiceController::class,'serviceDetails'])->name('services.details');
+
+});
+Route::prefix('activities')->group(function(){
+    Route::get('/',[ActivityController::class,'activities'])->name('activities.activities');
+    Route::get('/details',[ActivityController::class,'activitiesDetails'])->name('activities.details');
+
+});
+Route::prefix('pages')->group(function(){
+    Route::prefix('shop')->group(function(){
+        Route::get('/',[ShopController::class,'shop'])->name('shop');
+        Route::get('/details',[ShopController::class,'shop'])->name('shop.details');
+    });
+});

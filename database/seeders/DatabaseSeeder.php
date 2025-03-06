@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use Database\Seeders\GuiderSeeder; // Ensure to import the GuiderSeeder
+use Database\Seeders\DestinationsTableSeeder;
+use Database\Seeders\ServicesTableSeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,11 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(UserSeeder::class);
+        $this->call(DestinationsTableSeeder::class);
+        // Call the GuiderSeeder to create Guiders and link them to users
+        $this->call(GuiderSeeder::class);
+        $this->call(PackagesSeeder::class);
+        $this->call(ServicesTableSeeder::class);
+        // You can add additional seeders here if needed, for example:
+        // $this->call(OtherSeeder::class);
     }
 }

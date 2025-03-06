@@ -2,7 +2,7 @@
 .tour-box {
     position: relative;
     background-color: $white-color;
-    border: 1px solid #BCCED2;
+    border: 1px solid #bcced2;
     border-top: transparent;
     border-radius: 16px;
     overflow: hidden;
@@ -11,7 +11,7 @@
         display: flex;
         gap: 30px;
         align-items: center;
-        border: 1px solid #BCCED2;
+        border: 1px solid #bcced2;
 
         @include xl {
             display: block;
@@ -79,7 +79,7 @@
                     font-size: 18px;
                     font-weight: 500;
                     font-family: $title-font;
-                    border-bottom: 1px solid #BCCED2;
+                    border-bottom: 1px solid #bcced2;
                     color: $black-color;
                     padding-bottom: 10px;
                     margin-bottom: 15px;
@@ -94,7 +94,7 @@
         .tour-action {
             margin-top: 30px;
 
-            @media(max-width: 340px) {
+            @media (max-width: 340px) {
                 display: block;
             }
         }
@@ -122,7 +122,6 @@
             &_img {
                 &:before {
                     display: none;
-
                 }
             }
         }
@@ -130,7 +129,7 @@
 
     &.style4 {
         padding: 16px;
-        border: 1px solid #BCCED2;
+        border: 1px solid #bcced2;
 
         .tour-box {
             &_img {
@@ -156,8 +155,11 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 88.18%);
-
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.2) 88.18%
+            );
         }
 
         img {
@@ -183,20 +185,16 @@
         align-items: flex-start;
         gap: 8px;
         margin-bottom: 13px;
-
     }
 
     .star-rating {
         font-size: 14px;
 
         span {
-
             &:before {
-                color: #FF833E;
+                color: #ff833e;
             }
         }
-
-
     }
 
     .woocommerce-review-link {
@@ -219,8 +217,6 @@
         line-height: 36px;
         letter-spacing: 0.02em;
         color: $black-color2;
-
-
     }
 
     .tour-action {
@@ -268,12 +264,9 @@
     }
 }
 
-
 .tour-slider {
     position: relative;
-
 }
-
 
 /* tour end ------------------------*/
 
@@ -293,7 +286,7 @@
     position: relative;
     --space: 16px;
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
         width: 83%;
     }
 
@@ -309,8 +302,8 @@
         position: absolute;
         top: var(--space);
         left: var(--space);
-        width: calc(100% - var(--space)*2);
-        height: calc(100% - var(--space)*2);
+        width: calc(100% - var(--space) * 2);
+        height: calc(100% - var(--space) * 2);
         z-index: 2;
         background: rgba(17, 61, 72, 0.5);
         border: 1px solid $white-color;
@@ -324,7 +317,6 @@
         opacity: 0;
         transform: scale(0);
         transition: 0.4s ease-in-out;
-
     }
 
     .box-title {
@@ -332,7 +324,7 @@
         font-weight: 600;
         margin-bottom: 10px;
 
-        @media(max-width: 1399px) {
+        @media (max-width: 1399px) {
             font-size: 20px;
         }
     }
@@ -342,20 +334,16 @@
         align-items: flex-start;
         gap: 4px;
         margin-bottom: 20px;
-
     }
 
     .star-rating {
         font-size: 14px;
 
         span {
-
             &:before {
-                color: #FF833E;
+                color: #ff833e;
             }
         }
-
-
     }
 
     .woocommerce-review-link {
@@ -378,8 +366,6 @@
         line-height: 36px;
         letter-spacing: 0.02em;
         color: $white-color;
-
-
     }
 
     .tour-action {
@@ -455,7 +441,6 @@
 
 /* tour details start -------------------------- */
 .tour-page-single {
-
     .box-title {
         font-size: 40px;
 
@@ -487,7 +472,6 @@
             font-weight: 600;
             color: $theme-color;
         }
-
     }
 }
 
@@ -541,7 +525,7 @@
 }
 
 .tour-snapshot {
-    border: 1px solid #E1E4E5;
+    border: 1px solid #e1e4e5;
     padding: 40px 24px;
     margin-bottom: 64px;
 
@@ -564,7 +548,6 @@
     @include vxs {
         grid-template-columns: auto;
     }
-
 }
 
 .tour-snap {
