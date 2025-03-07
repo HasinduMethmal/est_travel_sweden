@@ -1,6 +1,16 @@
 
 <style>
-    
+   .header-button .th-btn {
+    background-color:#113d48 !important;
+}
+
+    .main-menu ul li a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #333; 
+    font-weight: bold;
+}
+
 </style>
 <div class="th-menu-wrapper onepage-nav">
     <div class="th-menu-area text-center">
@@ -10,18 +20,9 @@
         </div>
         <div class="th-mobile-menu">
             <ul>
-                <li class="menu-item-has-children mega-menu-wrap">
+                <li class="menu-item-has-children">
                     <a class="active" href="home-travel.html">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="home-travel.html">Home Travel</a></li>
-                        <li><a href="home-tour.html">Home Tour</a></li>
-                        <li><a href="home-agency.html">Home Agency</a></li>
-                        <li><a href="home-yacht.html">Home Yacht</a></li>
-                        <li><a href="home-beach.html">Home Beach</a></li>
-                        <li><a href="home-resort.html">Home Resort</a></li>
-                        <li><a href="home-countryside-hotel.html">Home Countryside Hotel</a></li>
-                        <li><a href="home-forest.html">Home Forest</a></li>
-                    </ul>
+                  
                 </li>
                 <li><a href="about.html">About Us</a></li>
                 <li class="menu-item">
@@ -68,71 +69,8 @@
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li >
-                                        <a class="active" href="home-travel.html">Home</a>
-                                        <ul class="mega-menu mega-menu-content">
-                                            <li>
-                                                <div class="container">
-                                                    <div class="row gy-4">
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img">
-                                                                    <img src="{{asset('frontend/images/home_tour.png')  }}" alt="Home Two">
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a href="{{ route('home.tour') }}"><span>02.</span>Home Tour</a></h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img">
-                                                                    <img src="{{asset('frontend/images/home_agency.png')  }}" alt="Home Three">
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a href="{{ route('home.agency') }}"><span>03.</span>Home Agency</a></h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img">
-                                                                    <img src="{{asset('frontend/images/home_yacht.png')  }}" alt="Home Four">
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a href="{{ route('home.yacht') }}"><span>04.</span>Home Yacht</a></h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img">
-                                                                    <img src="{{asset('frontend/images/home_beach.png')  }}" alt="Home Five">
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a href="{{ route('home.beach') }}"><span>05.</span>Home Beach</a></h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img">
-                                                                    <img src="{{asset('frontend/images/home_resort.png')  }}" alt="Home Six">
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a href="{{ route('home.resort') }}"><span>06.</span>Home Resort</a></h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img">
-                                                                    <img src="{{asset('frontend/images/home_countryside.png')  }}" alt="Home Six">
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a href="{{ route('home.countryside') }}"><span>07.</span>Home Countryside Hotel</a></h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mega-menu-box">
-                                                                <div class="mega-menu-img">
-                                                                    <img src="{{asset('frontend/images/home_forest.png')  }}" alt="Home Six">
-                                                                </div>
-                                                                <h3 class="mega-menu-title"><a href="{{ route('home.forest') }}"><span>08.</span>Home Forest</a></h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                        <a class="active" href="/">Home</a>
+                                   
                                     </li>
                                     <li><a href="{{ route('aboutUs') }}">About Us</a></li>
                                     <li class="menu-item">
@@ -163,7 +101,7 @@
                         </div>
                         <div class="col-auto d-none d-xl-block">
                             <div class="header-button">
-                                <a href="{{ route('booknow') }}" class="th-btn style1 th-icon" style=" font-family: 'Madimi One', serif; font-size:17px;">Book Now</a>
+                                <a href="{{ route('booknow') }}" class="th-btn style1 th-icon" style=" font-size:17px;">Book Now</a>
                             </div>
                         </div>
                     </div>

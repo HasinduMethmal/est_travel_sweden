@@ -6,7 +6,7 @@
  <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="frontend/assets/img/bg/breadcumb-bg.jpg">
+<div class="breadcumb-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('{{ asset('frontend/images/tour_guide.jpg') }}'); background-size: cover; background-position: center center; height: 400px;">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Tour Guide</h1>

@@ -1,22 +1,25 @@
 @extends('frontend.master')
 
+
 @section ('title', 'Home')
 
 @section('content')
   <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="frontend/assets/img/bg/breadcumb-bg.jpg">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Our Gallery</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="home-travel.html">Home</a></li>
-                    <li>Our Gallery</li>
-                </ul>
-            </div>
+<div class="breadcumb-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('frontend/images/gallery.jpg'); background-size: cover; background-position: center center; height: 400px;">
+    <div class="container">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">Our Gallery</h1>
+            <ul class="breadcumb-menu">
+                <li><a href="home-travel.html">Home</a></li>
+                <li>Our Gallery</li>
+            </ul>
         </div>
-    </div><!--==============================
+    </div>
+</div>
+
+<!--==============================
 Gallery Area  
 ==============================-->
     <div class="overflow-hidden space" id="gallery-sec">

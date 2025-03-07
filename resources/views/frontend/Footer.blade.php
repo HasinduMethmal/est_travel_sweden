@@ -31,9 +31,9 @@
 
                                     <li><a href="/">Home</a></li>
                                     <li><a href="{{ route('aboutUs') }}">About us</a></li>
-                                    <li><a href="service.html">Our Service</a></li>
-                                    <li><a href="contact.html">Terms of Service</a></li>
-                                    <li><a href="contact.html">Tour Booking Now</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                    <li><a href="{{ route('back_service.index') }}">Our Services</a></li>
+                                    <li><a href="{{ route('booknow') }}">Tour Booking Now</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -47,8 +47,8 @@
                                         <img src="frontend/assets/img/icon/phone.svg" alt="img">
                                     </div>
                                     <div class="details">
-                                        <p><a href="tel:+01234567890" class="info-box_link">+01 234 567 890</a></p>
-                                        <p><a href="tel:+09876543210" class="info-box_link">+09 876 543 210</a></p>
+                                        <p><a href="tel:+01234567890" class="info-box_link">Rachel - +46</a></p>
+                                        <p><a href="tel:+09876543210" class="info-box_link">Peter - +46</a></p>
                                     </div>
                                 </div>
                                 <div class="info-box_text">
@@ -63,7 +63,7 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="frontend/assets/img/icon/location-dot.svg" alt="img"></div>
                                     <div class="details">
-                                        <p>789 Inner Lane, Holy park, California, USA</p>
+                                        <p>Andra Langgatan 7, 413 03 Gotheburg Sweden</p>
                                     </div>
                                 </div>
                             </div>

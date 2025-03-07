@@ -1,26 +1,12 @@
 @extends('frontend.master')
 
 @section ('title', 'Home')
-<style>
-    .destination-item {
-    border: 1px solid black !important; /* 2px black border */
 
-}
-.th-btn {
-    border: 1px solid black !important; /* Add border to button */
-    
-}
-.tour-box {
-    border: 1px solid black !important; /* Add a black border */
-   
-}
-
-</style>
 @section('content')
   <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="{{ asset('frontend/assets/img/bg/servicesbg.png') }}">
+<div class="breadcumb-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('frontend/images/services_bg.jpg'); background-size: cover; background-position: center center; height: 400px;">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Services</h1>
