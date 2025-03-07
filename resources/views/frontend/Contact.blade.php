@@ -11,7 +11,8 @@
     <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="frontend/assets/img/bg/breadcumb-bg.jpg">
+<div class="breadcumb-wrapper " data-bg-src="frontend/assets/img/bg/contactbg.png"  style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+     url('{{ asset('frontend/assets/img/bg/contactbg.png') }}') !important;" >
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Contact Us</h1>
@@ -38,8 +39,8 @@ Contact Area
                         </div>
                         <div class="about-contact-details">
                             <h6 class="box-title">Our Address</h6>
-                            <p class="about-contact-details-text">2690 Hiltona Street Victoria</p>
-                            <p class="about-contact-details-text">Road, New York, Canada</p>
+                            <p class="about-contact-details-text">Andra Langgatan 7</p>
+                            <p class="about-contact-details-text">413 03 Gotheburg Sweden</p>
                         </div>
                     </div>
                 </div>
@@ -50,8 +51,8 @@ Contact Area
                         </div>
                         <div class="about-contact-details">
                             <h6 class="box-title">Phone Number</h6>
-                            <p class="about-contact-details-text"><a href="tel:01234567890">+01 234 567 890</a></p>
-                            <p class="about-contact-details-text"><a href="tel:01234567890">+09 876 543 210</a></p>
+                            <p class="about-contact-details-text"><a href="tel:01234567890">Rachel - +46</a></p>
+                            <p class="about-contact-details-text"><a href="tel:01234567890">Peter - +46</a></p>
                         </div>
                     </div>
                 </div>

@@ -2,21 +2,6 @@
 
 @section ('title', 'Home')
 
-<style>
-        .destination-item {
-    border: 1px solid black !important; /* 2px black border */
-
-}
-.th-btn {
-    border: 1px solid black !important; /* Add border to button */
-    
-}
-.tour-box {
-    border: 1px solid black !important; /* Add a black border */
-   
-}
-
-</style>
 @section('content')
   
   
@@ -24,7 +9,7 @@
   <!--==============================
     Breadcumb
 ============================== -->
-<div class="breadcumb-wrapper " data-bg-src="frontend/assets/img/bg/tripsbg.png">
+<div class="breadcumb-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('frontend/images/trips_bg.png'); background-size: cover; background-position: center center; height: 400px;">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Book Now</h1>
@@ -44,8 +29,8 @@ Product Area
                     <div class="col-md-4">
                         <div class="search-form-area">
                             <form class="search-form" >
-                                <input type="text" placeholder="Search" style="border:2px solid black;color:#113D48;">
-                                <button type="submit" style="background-color:#113D48;"><i class="fa-light fa-magnifying-glass" ></i></button>
+                                <input type="text" placeholder="Search" style="color:#113D48;">
+                                <button type="submit" style="background-color:#2a9dca;"><i class="fa-light fa-magnifying-glass" ></i></button>
                             </form>
                         </div>
                     </div>
@@ -578,19 +563,7 @@ Product Area
                                 </div>
                             </div>
                         </div>
-                        <div class="widget widget_tag_cloud  ">
-                            <h3 class="widget_title">Popular Tags</h3>
-                            <div class="tagcloud">
-                                <a href="blog.html">Tour</a>
-                                <a href="blog.html">Adventure</a>
-                                <a href="blog.html">Rent</a>
-                                <a href="blog.html">Innovate</a>
-                                <a href="blog.html">Hotel</a>
-                                <a href="blog.html">Modern</a>
-                                <a href="blog.html">Luxury</a>
-                                <a href="blog.html">Travel</a>
-                            </div>
-                        </div>
+                       
                         <div class="widget widget_offer  " data-bg-src="frontend/assets/img/bg/widget_bg_1.jpg">
                             <div class="offer-banner">
                                 <div class="offer">

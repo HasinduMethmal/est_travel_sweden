@@ -17,8 +17,8 @@
                                 <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">
                                     Natural Wonder of the world </h1>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
-                                    <a href="tour.html" class="th-btn th-icon">Explore Tours</a>
-                                    <a href="service.html" class="th-btn style2 th-icon">Our Services</a>
+                                    <a href="{{route('booknow')}}" class="th-btn th-icon">Explore Tours</a>
+                                    <a href="{{route('services.services')}}" class="th-btn style2 th-icon">Our Services</a>
                                 </div>
                             </div>
                         </div>
@@ -280,13 +280,13 @@ About Area
                 <div class="col-xl-6">
                     <div class="img-box1">
                         <div class="img1">
-                            <img src="frontend/assets/img/normal/about_1_1.jpg" alt="About">
+                            <img src="frontend/images/home_img.png" alt="About">
                         </div>
                         <div class="img2">
-                            <img src="frontend/assets/img/normal/about_1_2.jpg" alt="About">
+                            <img src="frontend/images/home_img1.png" alt="About">
                         </div>
                         <div class="img3">
-                            <img src="frontend/assets/img/normal/about_1_3.jpg" alt="About">
+                            <img src="frontend/images/home_img1.png" alt="About">
                         </div>
                     </div>
                 </div>
@@ -320,7 +320,7 @@ About Area
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-35"><a href="about.html" class="th-btn style3 th-icon">Learn More</a></div>
+                        <div class="mt-35"><a href="/aboutUs" class="th-btn style3 th-icon">Learn More</a></div>
                     </div>
                 </div>
             </div>
@@ -352,7 +352,7 @@ Service Area
 Service Area  
 ==============================-->
 
-    <section class="position-relative bg-top-center overflow-hidden space" id="service-sec" data-bg-src="frontend/assets/img/bg/tour_bg_1.jpg">
+<section class="position-relative bg-top-center overflow-hidden space" id="service-sec">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -589,7 +589,7 @@ Brand Area
                     <div class="swiper-slide">
                         <div class="brand-box">
                             <a href="">
-                                <img class="original" src="assets/img/brand/brand_1_4.svg" alt="Brand Logo">
+                                <img class="original" src="frontend/assets/img/brand/brand_1_4.svg" alt="Brand Logo">
                                 <img class="gray" src="frontend/assets/img/brand/brand_1_4.svg" alt="Brand Logo">
                             </a>
                         </div>
@@ -597,7 +597,7 @@ Brand Area
                     <div class="swiper-slide">
                         <div class="brand-box">
                             <a href="">
-                                <img class="original" src="assets/img/brand/brand_1_3.svg" alt="Brand Logo">
+                                <img class="original" src="frontend/assets/img/brand/brand_1_3.svg" alt="Brand Logo">
                                 <img class="gray" src="frontend/assets/img/brand/brand_1_3.svg" alt="Brand Logo">
                             </a>
                         </div>
