@@ -14,11 +14,11 @@
 
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="fw-bold">Tour Guides</h4>
-        <a href="{{ route('guider.create') }}" class="btn btn-primary">Add New Tour Guide</a>
+        <a href="{{ route('back_guider.create') }}" class="btn btn-primary">Add New Tour Guide</a>
     </div>
 
     <!-- Search Form -->
-    <form method="GET" action="{{ route('guider.index') }}" class="mb-4">
+    <form method="GET" action="{{ route('back_guider.index') }}" class="mb-4">
         <div class="row">
             <div class="col-lg-4">
                 <input type="text" class="form-control" name="email" placeholder="Search by Email" value="{{ request('email') }}">
@@ -50,8 +50,8 @@
                         <td>{{ $guider->name }}</td>
                         <td>{{ $guider->email }}</td>
                         <td>
-                            <span class="badge bg-{{ $guider->status == 'Active' ? 'success' : ($guider->status == 'Inactive' ? 'warning' : 'danger') }}">
-                                {{ ucfirst($guider->status) }}
+                            <span class="badge bg-{{ $guider->is_active == '1' ? 'success' : 'warning' }}">
+                                {{ ucfirst($guider->is_active=='1'?'Available':'Unavailable') }}
                             </span>
                         </td>
                         <td>{{ $guider->phone ?? 'N/A' }}</td>
@@ -62,11 +62,11 @@
                                 </button>
                                 <div class="dropdown-menu">
                                     <!-- View -->
-                                    <a class="dropdown-item" href="{{ route('guider.show', $guider->id) }}">
+                                    <a class="dropdown-item" href="{{ route('back_guider.show', $guider->id) }}">
                                         <i class="ti ti-eye me-1"></i> View
                                     </a>
                                     <!-- Edit -->
-                                    <a class="dropdown-item" href="{{ route('guider.edit', $guider->id) }}">
+                                    <a class="dropdown-item" href="{{ route('back_guider.edit', $guider->id) }}">
                                         <i class="ti ti-pencil me-1"></i> Edit
                                     </a>
                                     <!-- Delete -->
@@ -92,7 +92,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                     <!-- The delete form -->
-                                    <form action="{{ route('guider.destroy', $guider->id) }}" method="POST">
+                                    <form action="{{ route('back_guider.destroy', $guider->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Confirm Delete</button>

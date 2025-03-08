@@ -24,7 +24,7 @@
     <div class="card">
         <div class="card-body">
             <!-- Form for editing a package -->
-            <form action="{{ route('package.update', $package->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('back_package.update', $package->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -79,7 +79,7 @@
                 <!-- Submit and Cancel Buttons -->
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary">Update Package</button>
-                    <a href="{{ route('package.index') }}" class="btn btn-secondary">Cancel</a>
+                    <a href="{{ route('back_package.index') }}" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
         </div>

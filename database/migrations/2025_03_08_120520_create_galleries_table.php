@@ -9,22 +9,16 @@ return new class extends Migration
     
     public function up()
     {
-        Schema::create('packages', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); 
-            $table->text('description'); 
-            $table->decimal('price', 10, 2); 
-            $table->string('destination'); 
-            $table->integer('duration'); 
             $table->string('image')->nullable(); 
-            $table->boolean('is_active')->default(true); 
             $table->timestamps(); 
         });
     }
 
-  
+   
     public function down()
     {
-        Schema::dropIfExists('packages');
+        Schema::dropIfExists('galleries');
     }
 };

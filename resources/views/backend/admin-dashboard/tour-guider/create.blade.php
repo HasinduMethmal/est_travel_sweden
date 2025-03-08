@@ -20,9 +20,9 @@
             @endif
 
             <!-- Tour Guide Creation Form -->
-            <form action="{{ route('guider.store') }}" method="POST">
+            <form action="{{ route('back_guider.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-
+            
                 <!-- Tour Guide Name Field -->
                 <div class="mb-3">
                     <label for="name" class="form-label">Tour Guide Name</label>
@@ -35,7 +35,7 @@
                         required
                     >
                 </div>
-
+            
                 <!-- Email Field -->
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -48,17 +48,16 @@
                         required
                     >
                 </div>
-
+            
                 <!-- Status Field -->
                 <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
-                    <select id="status" name="status" class="form-control" required>
-                        <option value="Active" {{ old('status') == 'Active' ? 'selected' : '' }}>Active</option>
-                        <option value="Inactive" {{ old('status') == 'Inactive' ? 'selected' : '' }}>Inactive</option>
-                        <option value="Suspended" {{ old('status') == 'Suspended' ? 'selected' : '' }}>Suspended</option>
+                    <label for="is_active" class="form-label">Status</label>
+                    <select name="is_active" id="is_active" class="form-control" required>
+                        <option value="1" >Active</option>
+                        <option value="0" >Inactive</option>
                     </select>
                 </div>
-
+            
                 <!-- Bio Field -->
                 <div class="mb-3">
                     <label for="bio" class="form-label">Bio</label>
@@ -68,7 +67,7 @@
                         class="form-control"
                         required>{{ old('bio') }}</textarea>
                 </div>
-
+            
                 <!-- Phone Number Field (Optional) -->
                 <div class="mb-3">
                     <label for="phone" class="form-label">Phone Number</label>
@@ -80,7 +79,7 @@
                         value="{{ old('phone') }}"
                     >
                 </div>
-
+            
                 <!-- Profile Image Field (Optional) -->
                 <div class="mb-3">
                     <label for="image" class="form-label">Profile Image</label>
@@ -92,11 +91,11 @@
                         accept="image/*"
                     >
                 </div>
-
+            
                 <!-- Submit and Cancel Buttons -->
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary">Create Tour Guide</button>
-                    <a href="{{ route('guider.index') }}" class="btn btn-secondary">Cancel</a>
+                    <a href="{{ route('back_guider.index') }}" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
         </div>

@@ -25,7 +25,7 @@ class DestinationsTableSeeder extends Seeder
                 'description' => $faker->paragraph, // Random paragraph as description
                 'price' => $faker->randomFloat(2, 100, 10000), // Random price between 100 and 10000
                 'image' => $faker->imageUrl(640, 480, 'travel'), // Random image URL
-                'status' => $faker->randomElement(['Active', 'Inactive']), // Randomly choose between Active and Inactive
+                'is_active' => $faker->boolean(80), // 80% chance to be true (active), 20% chance to be false (inactive)
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

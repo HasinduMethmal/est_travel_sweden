@@ -40,6 +40,12 @@
                     <textarea name="description" id="description" class="form-control" required>{{ old('description', $destination->description) }}</textarea>
                 </div>
 
+                  <!-- Description -->
+                  <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <textarea name="location" id="location" class="form-control" required>{{ old('location', $destination->location) }}</textarea>
+                </div>
+
                 <!-- Price -->
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
@@ -48,15 +54,18 @@
 
               
 
-                <!-- Status -->
+                <!-- Availability -->
                 <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
-                    <select name="status" id="status" class="form-control" required>
-                        <option value="Active" {{ old('status', $destination->status) == 'Active' ? 'selected' : '' }}>Active</option>
-                        <option value="Inactive" {{ old('status', $destination->status) == 'Inactive' ? 'selected' : '' }}>Inactive</option>
+                    <label for="is_active" class="form-label">Availability</label>
+                    <select name="is_active" id="is_active" class="form-control" required>
+                        <!-- Check if the value of is_active is '1' (true) and select the option -->
+                        <option value="1" {{ old('is_active', $destination->is_active) == 1 ? 'selected' : '' }}>Available</option>
+                        
+                        <!-- Check if the value of is_active is '0' (false) and select the option -->
+                        <option value="0" {{ old('is_active', $destination->is_active) == 0 ? 'selected' : '' }}>Unavailable</option>
                     </select>
                 </div>
-
+                
                 <!-- Image Upload -->
                 <div class="mb-3">
                     <label for="image" class="form-label">Destination Image</label>

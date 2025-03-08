@@ -24,7 +24,7 @@
     <div class="card">
         <div class="card-body">
             <!-- Form for editing a tour guide -->
-            <form action="{{ route('guider.update', $guider->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('back_guider.update', $guider->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -43,13 +43,13 @@
                 <!-- Bio -->
                 <div class="mb-3">
                     <label for="bio" class="form-label">Bio</label>
-                    <textarea name="bio" id="bio" class="form-control" required>{{ old('bio', $guider->bio) }}</textarea>
+                    <textarea name="bio" id="bio" class="form-control" maxlength="1000">{{ old('bio', $guider->bio) }}</textarea>
                 </div>
 
                 <!-- Phone Number (Optional) -->
                 <div class="mb-3">
                     <label for="phone" class="form-label">Phone Number</label>
-                    <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone', $guider->phone) }}">
+                    <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone', $guider->phone) }}" pattern="^[0-9]{10,15}$" maxlength="15">
                 </div>
 
                 <!-- Profile Image -->
@@ -63,18 +63,17 @@
 
                 <!-- Status -->
                 <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
-                    <select name="status" id="status" class="form-control" required>
-                        <option value="Active" {{ old('status', $guider->status) == 'Active' ? 'selected' : '' }}>Active</option>
-                        <option value="Inactive" {{ old('status', $guider->status) == 'Inactive' ? 'selected' : '' }}>Inactive</option>
-                        <option value="Suspended" {{ old('status', $guider->status) == 'Suspended' ? 'selected' : '' }}>Suspended</option>
+                    <label for="is_active" class="form-label">Status</label>
+                    <select name="is_active" id="is_active" class="form-control" required>
+                        <option value="1" {{ old('is_active', $guider->is_active) == 1 ? 'selected' : '' }}>Active</option>
+                        <option value="0" {{ old('is_active', $guider->is_active) == 0 ? 'selected' : '' }}>Inactive</option>
                     </select>
                 </div>
 
                 <!-- Submit and Cancel Buttons -->
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary">Update Tour Guide</button>
-                    <a href="{{ route('guider.index') }}" class="btn btn-secondary">Cancel</a>
+                    <a href="{{ route('back_guider.index') }}" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
         </div>

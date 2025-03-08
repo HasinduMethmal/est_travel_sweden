@@ -12,13 +12,10 @@ class AuthController extends Controller{
 
     public function showLoginForm()
     {
-        // Check if the user is already authenticated and is an admin
         if (Auth::check() && Auth::user()->is_admin === true) {
-            // Redirect to the dashboard if the user is authenticated and is an admin
             return redirect()->route('dashboard.index');
         }
         
-        // Show the login form if the user is not authenticated
         return view('auth.login');
     }
     

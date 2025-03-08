@@ -81,187 +81,23 @@
             </div>
             <div class="swiper th-slider destination-slider slider-drag-wrap" id="aboutSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}},"effect":"coverflow","coverflowEffect":{"rotate":"0","stretch":"95","depth":"212","modifier":"1"},"centeredSlides":"true"}'>
                 <div class="swiper-wrapper">
+                    @foreach($destinations as $destination)
                     <div class="swiper-slide">
                         <div class="destination-box gsap-cursor">
                             <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_1.jpg" alt="destination image">
+                                <!-- Check if the destination has an image -->
+                                <img src="{{ asset('storage/' . $destination->image) }}" alt="destination image">
                                 <div class="destination-content">
                                     <div class="media-left">
                                         <h4 class="box-title">
-                                            <a href="destination-details.html">Maldives</a>
+                                            {{ $destination->name }}
                                         </h4>
-                                        <span class="destination-subtitle">15 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_2.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Thailand</a>
-                                        </h4>
-                                        <span class="destination-subtitle">22 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_3.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Belgium</a>
-                                        </h4>
-                                        <span class="destination-subtitle">25 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_4.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Island</a>
-                                        </h4>
-                                        <span class="destination-subtitle">28 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_5.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Maldives</a>
-                                        </h4>
-                                        <span class="destination-subtitle">30 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_1.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Maldives</a>
-                                        </h4>
-                                        <span class="destination-subtitle">15 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_2.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Thailand</a>
-                                        </h4>
-                                        <span class="destination-subtitle">22 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_3.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Belgium</a>
-                                        </h4>
-                                        <span class="destination-subtitle">25 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_4.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Island</a>
-                                        </h4>
-                                        <span class="destination-subtitle">28 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="destination-box gsap-cursor">
-                            <div class="destination-img">
-                                <img src="frontend/assets/img/destination/destination_1_5.jpg" alt="destination image">
-                                <div class="destination-content">
-                                    <div class="media-left">
-                                        <h4 class="box-title">
-                                            <a href="destination-details.html">Maldives</a>
-                                        </h4>
-                                        <span class="destination-subtitle">30 Listing</span>
-                                    </div>
-                                    <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View All</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -364,154 +200,40 @@ Service Area
                     </div>
                 </div>
             </div>
-            <div class="slider-area tour-slider ">
-                <div class="swiper th-slider has-shadow slider-drag-wrap" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+            <div class="slider-area tour-slider">
+                <div class="swiper th-slider has-shadow slider-drag-wrap" 
+                     data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"},"1300":{"slidesPerView":"4"}}}'>
+                    
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img">
-                                    <img src="frontend/assets/img/tour/tour_box_1.jpg" alt="image">
-                                </div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Greece Tour Package</a></h3>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated
-                                                <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8
-                                                Rating)</span></div>
-                                        <a href="tour-details.html" class="woocommerce-review-link">(<span class="count">4.8</span>
-                                            Rating)</a>
+                        <!-- Loop through packages and display them dynamically -->
+                        @foreach($packages as $package)
+                            <div class="swiper-slide">
+                                <div class="tour-box th-ani gsap-cursor">
+                                    <div class="tour-box_img global-img">
+                                        <!-- Assuming the package has an image attribute -->
+                                        <img src="{{ asset('storage/' . $package->image) }}" alt="{{ $package->title }}">
                                     </div>
-                                    <h4 class="tour-box_price"><span class="currency">$980.00</span>/Person</h4>
-                                    <div class="tour-action">
-                                        <span><i class="fa-light fa-clock"></i>7 Days</span>
-                                        <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img">
-                                    <img src="frontend/assets/img/tour/tour_box_2.jpg" alt="image">
-                                </div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Italy Tour package</a></h3>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated
-                                                <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8
-                                                Rating)</span></div>
-                                        <a href="tour-details.html" class="woocommerce-review-link">(<span class="count">4.8</span>
-                                            Rating)</a>
-                                    </div>
-                                    <h4 class="tour-box_price"><span class="currency">$980.00</span>/Person</h4>
-                                    <div class="tour-action">
-                                        <span><i class="fa-light fa-clock"></i>7 Days</span>
-                                        <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
+                                    <div class="tour-content">
+                                        <!-- Title, Link to Package Details, and Price -->
+                                        <h3 class="box-title">
+                                            {{ $package->name }}
+                                        </h3>
+                                        <h4 class="tour-box_price">
+                                            <span class="currency">${{ number_format($package->price, 2) }}</span>/Person
+                                        </h4>
+                                        <!-- Display duration if available -->
+                                        <div class="tour-action">
+                                            <span><i class="fa-light fa-clock"></i>{{ $package->duration }} Days</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img">
-                                    <img src="frontend/assets/img/tour/tour_box_3.jpg" alt="image">
-                                </div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Dubai Tour Package</a></h3>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated
-                                                <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8
-                                                Rating)</span></div>
-                                        <a href="tour-details.html" class="woocommerce-review-link">(<span class="count">4.8</span>
-                                            Rating)</a>
-                                    </div>
-                                    <h4 class="tour-box_price"><span class="currency">$980.00</span>/Person</h4>
-                                    <div class="tour-action">
-                                        <span><i class="fa-light fa-clock"></i>7 Days</span>
-                                        <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img">
-                                    <img src="frontend/assets/img/tour/tour_box_4.jpg" alt="image">
-                                </div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Switzerland</a></h3>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated
-                                                <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8
-                                                Rating)</span></div>
-                                        <a href="tour-details.html" class="woocommerce-review-link">(<span class="count">4.8</span>
-                                            Rating)</a>
-                                    </div>
-                                    <h4 class="tour-box_price"><span class="currency">$980.00</span>/Person</h4>
-                                    <div class="tour-action">
-                                        <span><i class="fa-light fa-clock"></i>7 Days</span>
-                                        <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img">
-                                    <img src="frontend/assets/img/tour/tour_box_1.jpg" alt="image">
-                                </div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Greece Tour Package</a></h3>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated
-                                                <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8
-                                                Rating)</span></div>
-                                        <a href="tour-details.html" class="woocommerce-review-link">(<span class="count">4.8</span>
-                                            Rating)</a>
-                                    </div>
-                                    <h4 class="tour-box_price"><span class="currency">$980.00</span>/Person</h4>
-                                    <div class="tour-action">
-                                        <span><i class="fa-light fa-clock"></i>7 Days</span>
-                                        <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="tour-box th-ani gsap-cursor">
-                                <div class="tour-box_img global-img">
-                                    <img src="frontend/assets/img/tour/tour_box_2.jpg" alt="image">
-                                </div>
-                                <div class="tour-content">
-                                    <h3 class="box-title"><a href="tour-details.html">Italy Tour package</a></h3>
-                                    <div class="tour-rating">
-                                        <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span style="width:100%">Rated
-                                                <strong class="rating">5.00</strong> out of 5 based on <span class="rating">4.8</span>(4.8
-                                                Rating)</span></div>
-                                        <a href="tour-details.html" class="woocommerce-review-link">(<span class="count">4.8</span>
-                                            Rating)</a>
-                                    </div>
-                                    <h4 class="tour-box_price"><span class="currency">$980.00</span>/Person</h4>
-                                    <div class="tour-action">
-                                        <span><i class="fa-light fa-clock"></i>7 Days</span>
-                                        <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
-
-    </section>
+</section>
 
 
 <!--==============================

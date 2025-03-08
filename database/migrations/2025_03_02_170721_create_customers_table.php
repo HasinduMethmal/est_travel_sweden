@@ -6,23 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('guiders', function (Blueprint $table) {
-            $table->id(); // Auto-incrementing ID for the Guider record
+            $table->id(); 
             $table->foreignId('user_id')
-                ->nullable() // Foreign key to the users table
-                ->constrained() // Automatically links to the `id` column in the `users` table
-                ->onDelete('cascade'); // If the user is deleted, the Guider record is deleted as well
-            $table->string('name'); // Guider name
-            $table->string('email')->unique(); // Guider email
-            $table->enum('status', ['Active', 'Inactive'])->default('Active'); // Status of the Guider
-            $table->timestamps(); // Created and updated timestamps
+                ->nullable() 
+                ->constrained() 
+                ->onDelete('cascade'); 
+            $table->string('name'); 
+            $table->string('email')->unique(); 
+            $table->string('image')->nullable(); 
+            $table->string('phone')->nullable(); 
+            $table->text('bio')->nullable();
+            $table->boolean('is_active')->default(true); 
+            $table->timestamps(); 
         });
     }
 
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Guiders');
+        Schema::dropIfExists('guiders');
     }
 };
