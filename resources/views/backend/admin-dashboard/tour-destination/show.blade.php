@@ -39,8 +39,10 @@
                         <span>${{ number_format($destination->price, 2) }}</span>
                     </li>
                     <li class="mb-2">
-                        <span class="h6">Status:</span>
-                        <span>{{ ucfirst($destination->status) }}</span>
+                        <span class="h6">Availability:</span>
+                        <span class="badge bg-{{ $destination->is_active == '1' ? 'success' : 'warning' }}">
+                            {{ ucfirst($destination->is_active=='1'?'Available':'Unavailable') }}
+                        </span>                    
                     </li>
                     <li class="mb-2">
                         <span class="h6">Description:</span>

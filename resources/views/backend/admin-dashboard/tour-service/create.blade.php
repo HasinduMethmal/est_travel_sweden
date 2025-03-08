@@ -59,16 +59,7 @@
                     >
                 </div>
 
-                <!-- Category Field (Optional, for Service Type like "Hotel", "Transportation", etc.) -->
-                <div class="mb-3">
-                    <label for="category" class="form-label">Category</label>
-                    <select id="category" name="category" class="form-control" required>
-                        <option value="Hotel" {{ old('category') == 'Hotel' ? 'selected' : '' }}>Hotel</option>
-                        <option value="Transportation" {{ old('category') == 'Transportation' ? 'selected' : '' }}>Transportation</option>
-                        <option value="Tour Guide" {{ old('category') == 'Tour Guide' ? 'selected' : '' }}>Tour Guide</option>
-                        <option value="Adventure" {{ old('category') == 'Adventure' ? 'selected' : '' }}>Adventure</option>
-                    </select>
-                </div>
+            
 
                 <!-- Image Field -->
                 <div class="mb-3">
@@ -86,8 +77,8 @@
                 <div class="mb-3">
                     <label for="is_active" class="form-label">Status</label>
                     <select id="is_active" name="is_active" class="form-control" required>
-                        <option value="1" {{ old('is_active') == '1' ? 'selected' : '' }}>Active</option>
-                        <option value="0" {{ old('is_active') == '0' ? 'selected' : '' }}>Inactive</option>
+                        <option value="1" >Active</option>
+                        <option value="0" >Inactive</option>
                     </select>
                 </div>
 

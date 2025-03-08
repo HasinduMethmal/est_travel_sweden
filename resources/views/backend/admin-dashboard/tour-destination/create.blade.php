@@ -31,7 +31,6 @@
                         id="name"
                         name="name"
                         class="form-control"
-                        value="{{ old('name') }}"
                         required
                     >
                 </div>
@@ -43,7 +42,15 @@
                         id="description"
                         name="description"
                         class="form-control"
-                        required>{{ old('description') }}</textarea>
+                        required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <textarea
+                        id="location"
+                        name="location"
+                        class="form-control"
+                        required></textarea>
                 </div>
 
                 <!-- Price Field -->
@@ -54,19 +61,16 @@
                         id="price"
                         name="price"
                         class="form-control"
-                        value="{{ old('price') }}"
                         required
                     >
                 </div>
 
-        
-
                 <!-- Status Field -->
                 <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
-                    <select id="status" name="status" class="form-control" required>
-                        <option value="Active" {{ old('status') == 'Active' ? 'selected' : '' }}>Active</option>
-                        <option value="Inactive" {{ old('status') == 'Inactive' ? 'selected' : '' }}>Inactive</option>
+                    <label for="is_active" class="form-label">Status</label>
+                    <select id="is_active" name="is_active" class="form-control" required>
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
                     </select>
                 </div>
 

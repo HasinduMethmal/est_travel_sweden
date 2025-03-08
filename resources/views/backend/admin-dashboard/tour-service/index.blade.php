@@ -52,13 +52,38 @@
                                         <i class="ti ti-pencil me-1"></i> Edit
                                     </a>
                                     <!-- Delete -->
-                                    <a class="dropdown-item text-danger" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-service-id="{{ $service->id }}">
+                                    <a class="dropdown-item text-danger" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ $service->id }}">
                                         <i class="ti ti-trash me-1"></i> Delete
                                     </a>
                                 </div>
                             </div>
                         </td>
                     </tr>
+
+                    <!-- Confirmation Modal for each service -->
+                    <div class="modal fade" id="confirmDeleteModal{{ $service->id }}" tabindex="-1" aria-labelledby="confirmDeleteModalLabel{{ $service->id }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmDeleteModalLabel{{ $service->id }}">Confirm Deletion</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete this tour service? This action cannot be undone.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <!-- Delete Form for this service -->
+                                    <form action="{{ route('back_service.destroy', $service->id) }}" method="POST" style="display: inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     @empty
                     <tr>
                         <td colspan="5" class="text-center">No tour services found.</td>
@@ -69,29 +94,5 @@
         </div>
     </div>
 </div>
-
-<!-- Confirmation Modal -->
-<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete this tour service? This action cannot be undone.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <form id="deleteForm" action="{{ route('back_service.destroy', $service->id) }}" method="POST" style="display: inline;">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Confirm Delete</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 @endsection

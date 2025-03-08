@@ -7,7 +7,7 @@
 <div class="container-xxl flex-grow-1 container-p-y col-lg-6">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="fw-bold">Tour Guide Details</h4>
-        <a href="{{ route('guider.index') }}" class="btn btn-secondary">Back to Tour Guides</a>
+        <a href="{{ route('back_guider.index') }}" class="btn btn-secondary">Back </a>
     </div>
 
     <div class="card mb-6">
@@ -45,15 +45,13 @@
                     </li>
                     <li class="mb-2">
                         <span class="h6">Status:</span>
-                        <span>{{ ucfirst($guider->status) }}</span>
+                        <span class="badge bg-{{ $guider->is_active == '1' ? 'success' : 'warning' }}">
+                            {{ ucfirst($guider->is_active=='1'?'Available':'Unavailable') }}
+                        </span>                    
                     </li>
                     <li class="mb-2">
                         <span class="h6">Bio:</span>
                         <span>{{ $guider->bio ?? 'N/A' }}</span>
-                    </li>
-                    <li class="mb-2">
-                        <span class="h6">Languages:</span>
-                        <span>{{ $guider->languages ?? 'N/A' }}</span>
                     </li>
                 </ul>
 

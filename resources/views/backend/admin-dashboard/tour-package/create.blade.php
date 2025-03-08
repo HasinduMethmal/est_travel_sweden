@@ -20,7 +20,7 @@
             @endif
 
             <!-- Package Creation Form -->
-            <form action="{{ route('package.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('back_package.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <!-- Package Name Field -->
@@ -61,7 +61,7 @@
 
                 <!-- Destination Field -->
                 <div class="mb-3">
-                    <label for="destination" class="form-label">Destination</label>
+                    <label for="destination" class="form-label">Based Destination</label>
                     <input
                         type="text"
                         id="destination"
@@ -101,15 +101,15 @@
                 <div class="mb-3">
                     <label for="is_active" class="form-label">Status</label>
                     <select id="is_active" name="is_active" class="form-control" required>
-                        <option value="1" {{ old('is_active') == '1' ? 'selected' : '' }}>Active</option>
-                        <option value="0" {{ old('is_active') == '0' ? 'selected' : '' }}>Inactive</option>
+                        <option value="1" >Active</option>
+                        <option value="0" >Inactive</option>
                     </select>
                 </div>
 
                 <!-- Submit and Cancel Buttons -->
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary">Create Package</button>
-                    <a href="{{ route('package.index') }}" class="btn btn-secondary">Cancel</a>
+                    <a href="{{ route('back_package.index') }}" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
         </div>

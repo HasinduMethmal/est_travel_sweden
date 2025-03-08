@@ -25,14 +25,14 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item active">
-          <a href="{{route('guider.index')}}" class="menu-link">
+          <a href="{{route('back_guider.index')}}" class="menu-link">
             <div data-i18n="Tour Guiders">Tour Guiders</div>
           </a>
         </li>
       </ul>
       <ul class="menu-sub">
         <li class="menu-item active">
-          <a href="{{route('package.index')}}" class="menu-link">
+          <a href="{{route('back_package.index')}}" class="menu-link">
             <div data-i18n="Packages Details">packages Details</div>
           </a>
         </li>
@@ -51,6 +51,11 @@
         <li class="menu-item active">
           <a href="{{route('back_service.index')}}" class="menu-link">
             <div data-i18n="Booking Requests">Booking Requests</div>
+          </a>
+        </li>
+        <li class="menu-item active">
+          <a href="{{route('back_gallery.index')}}" class="menu-link">
+            <div data-i18n="Gallery">Gallery</div>
           </a>
         </li>
 

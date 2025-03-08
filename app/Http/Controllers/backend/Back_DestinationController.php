@@ -3,20 +3,18 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Destination; // Assuming you have a Destination model
+use App\Models\Destination; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class Back_DestinationController extends Controller
 {
-    // Display a list of all destinations
     public function index()
     {
-        $destinations = Destination::all(); // Or use pagination: Destination::paginate(10);
+        $destinations = Destination::all(); 
         return view('backend.admin-dashboard.tour-destination.index', compact('destinations'));
     }
 
-    // Show the form to create a new destination
     public function create()
     {
         return view('backend.admin-dashboard.tour-destination.create');
@@ -24,34 +22,32 @@ class Back_DestinationController extends Controller
 
     public function show($id)
     {
-        // Fetch the destination by its ID
         $destination = Destination::findOrFail($id);
 
-        // Return the view with the destination details
         return view('backend.admin-dashboard.tour-destination.show', compact('destination'));
     }
 
 
-    // Store a new destination
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
+            'location' => 'required|string',
             'price' => 'required|numeric',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', // Optional image validation
-            'status' => 'required|in:Active,Inactive', // Destination status
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', 
+            'is_active' => 'required|boolean',
         ]);
 
         $destination = new Destination();
         $destination->name = $request->name;
         $destination->description = $request->description;
+        $destination->location= $request->location;
         $destination->price = $request->price;
-        $destination->status = $request->status;
+        $destination->is_active = $request->is_active;
 
-        // Handle image upload if present
         if ($request->hasFile('image')) {
-            $destination->image = $request->file('image')->store('images/destinations', 'public');  // Store image in 'public' disk
+            $destination->image = $request->file('image')->store('images/destinations', 'public');  
         }
 
         $destination->save();
@@ -59,7 +55,6 @@ class Back_DestinationController extends Controller
         return redirect()->route('back_destination.index')->with('success', 'Destination created successfully.');
     }
 
-    // Show the form to edit an existing destination
     public function edit($id)
     {
         $destination = Destination::findOrFail($id);
@@ -72,22 +67,22 @@ class Back_DestinationController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
+            'location' => 'required|string',
             'price' => 'required|numeric',
             'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'status' => 'required|in:Active,Inactive',
+            'is_active' => 'required|boolean',
         ]);
 
         $destination = Destination::findOrFail($id);
         $destination->name = $request->name;
         $destination->description = $request->description;
+        $destination->location= $request->location;
         $destination->price = $request->price;
-        $destination->status = $request->status;
+        $destination->is_active = $request->is_active;
 
-        // Handle image upload if present
         if ($request->hasFile('image')) {
-            // Delete the old image if it's being replaced
             if ($destination->image) {
-                Storage::delete('public/images/destination' . $destination->image); // Using Storage facade for better clarity
+                Storage::delete('public/' . $destination->image); 
             }
             $destination->image = $request->file('image')->store('images/destinations', 'public');
         }
@@ -97,14 +92,12 @@ class Back_DestinationController extends Controller
         return redirect()->route('back_destination.index')->with('success', 'Destination updated successfully.');
     }
 
-    // Delete a destination
     public function destroy($id)
     {
         $destination = Destination::findOrFail($id);
         
-        // Delete the associated image if it exists
         if ($destination->image) {
-            Storage::delete('public/images/destination' . $destination->image); // Use Storage facade
+            Storage::delete('public/' . $destination->image); 
         }
 
         $destination->delete();

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GuiderSeeder::class);
         $this->call(PackagesSeeder::class);
         $this->call(ServicesTableSeeder::class);
+        $this->call(GallerySeeder::class);
         // You can add additional seeders here if needed, for example:
         // $this->call(OtherSeeder::class);
     }

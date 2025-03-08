@@ -18,13 +18,16 @@ class GuiderSeeder extends Seeder
         // Instantiate Faker
         $faker = Faker::create();
 
-        // Generate 10 dummy guiders
+        // Generate 20 dummy guiders
         foreach (range(1, 20) as $index) {
             Guider::create([
                 'user_id' => null, // You can assign a valid user_id if you want to link a user
                 'name' => $faker->name, // Random name
                 'email' => $faker->unique()->safeEmail, // Random unique email
-                'status' => $faker->randomElement(['Active', 'Inactive']), // Random status
+                'image' => $faker->imageUrl(),  // Random image URL
+                'phone' => $faker->phoneNumber, // Random phone number
+                'bio' => $faker->paragraph, // Random bio (paragraph)
+                'is_active' => $faker->boolean,  // Random boolean for active status
             ]);
         }
     }

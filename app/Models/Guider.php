@@ -9,26 +9,25 @@ class Guider extends Model
 {
     use HasFactory;
 
-    // Table name (optional if it matches the plural form of the model)
     protected $table = 'guiders';
 
-    // Mass assignable attributes
     protected $fillable = [
         'user_id',
         'name',
         'email',
-        'status',
+        'image',
+        'phone',
+        'bio',
+        'is_active',
     ];
 
-    // Define relationship to User (if applicable)
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // Additional helper methods if required
     public function getStatusLabelAttribute()
     {
-        return ucfirst($this->status);
+        return ucfirst($this->is_active == 1 ? 'Active' : 'Inactive');
     }
 }

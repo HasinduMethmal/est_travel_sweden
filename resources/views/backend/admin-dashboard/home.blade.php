@@ -49,8 +49,10 @@
   <link rel="stylesheet" href="{{ asset('backend/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}" />
   <link rel="stylesheet" href="{{ asset('backend/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css') }}" />
 
+
   <!-- Page CSS -->
   <link rel="stylesheet" href="{{ asset('backend/assets/vendor/css/pages/cards-advance.css') }}" />
+  <link rel="stylesheet" href="{{asset('backend/assets/vendor/libs/dropzone/dropzone.css')}}" />
 
   <!-- Helpers -->
   <script src="{{ asset('backend/assets/vendor/js/helpers.js') }}"></script>
@@ -107,12 +109,15 @@
   <script src="{{ asset('backend/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
   <script src="{{ asset('backend/assets/vendor/libs/swiper/swiper.js') }}"></script>
   <script src="{{ asset('backend/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
+  <script src="{{asset('backend/assets/vendor/libs/dropzone/dropzone.js')}}"></script>
+
 
   <!-- Main JS -->
   <script src="{{ asset('backend/assets/js/main.js') }}"></script>
 
   <!-- Page JS -->
   <script src="{{ asset('backend/assets/js/dashboards-analytics.js') }}"></script>
+  <script src="{{asset('backend/assets/js/forms-file-upload.js')}}"></script>
 
   <!-- Custom Scripts -->
   @yield('js')
