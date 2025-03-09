@@ -12,9 +12,9 @@ class Back_GalleryController extends Controller
     
     public function index()
     {
-        $galleries = Gallery::all();
+        $images = Gallery::all();
 
-        return view('backend.admin-dashboard.gallery.index', compact('galleries'));
+        return view('backend.admin-dashboard.gallery.index', compact('images'));
     }
 
    
