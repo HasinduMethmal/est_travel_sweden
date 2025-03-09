@@ -14,6 +14,7 @@ class TourguideController extends Controller{
     }
 
     public function tourguideDetails(){
+        
         return view('frontend.tour-guide.tourguide-details');
     }
 }
