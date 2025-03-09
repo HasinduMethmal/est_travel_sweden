@@ -46,16 +46,7 @@
                     <input type="number" name="price" id="price" class="form-control" value="{{ old('price', $service->price) }}" required>
                 </div>
 
-                <!-- Category -->
-                <div class="mb-3">
-                    <label for="category" class="form-label">Category</label>
-                    <select name="category" id="category" class="form-control" required>
-                        <option value="Hotel" {{ old('category', $service->category) == 'Hotel' ? 'selected' : '' }}>Hotel</option>
-                        <option value="Transportation" {{ old('category', $service->category) == 'Transportation' ? 'selected' : '' }}>Transportation</option>
-                        <option value="Tour Guide" {{ old('category', $service->category) == 'Tour Guide' ? 'selected' : '' }}>Tour Guide</option>
-                        <option value="Adventure" {{ old('category', $service->category) == 'Adventure' ? 'selected' : '' }}>Adventure</option>
-                    </select>
-                </div>
+              
 
                 <!-- Service Image -->
                 <div class="mb-3">

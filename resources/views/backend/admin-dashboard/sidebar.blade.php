@@ -1,10 +1,12 @@
 <!-- Menu -->
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-  <div class="app-brand demo">
-    <a href="index.html" class="app-brand-link">
-        <img class="img-fluid for-light for-dark" src="" style="width: 190px;">
+  <div class="app-brand demo " style="padding-top:5px;">
+    <a href="{{route('dashboard.index')}}" class="app-brand-link" style="display: inline-block; text-align: center; width: 100%;">
+      <img class="img-fluid for-light for-dark" src="{{asset('backend/assets/img/besttime-travel.png')}}" style="width: 100px; vertical-align: middle;">
     </a>
+  
+      
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
       <i class="ti menu-toggle-icon d-none d-xl-block align-middle"></i>
@@ -23,14 +25,14 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item active">
-          <a href="{{route('guider.index')}}" class="menu-link">
+          <a href="{{route('back_guider.index')}}" class="menu-link">
             <div data-i18n="Tour Guiders">Tour Guiders</div>
           </a>
         </li>
       </ul>
       <ul class="menu-sub">
         <li class="menu-item active">
-          <a href="{{route('package.index')}}" class="menu-link">
+          <a href="{{route('back_package.index')}}" class="menu-link">
             <div data-i18n="Packages Details">packages Details</div>
           </a>
         </li>
@@ -49,6 +51,11 @@
         <li class="menu-item active">
           <a href="{{route('back_service.index')}}" class="menu-link">
             <div data-i18n="Booking Requests">Booking Requests</div>
+          </a>
+        </li>
+        <li class="menu-item active">
+          <a href="{{route('back_gallery.index')}}" class="menu-link">
+            <div data-i18n="Gallery">Gallery</div>
           </a>
         </li>
 

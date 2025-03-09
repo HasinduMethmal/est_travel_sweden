@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Guider;
 use Illuminate\Http\Request;
 
 class TourguideController extends Controller{
 
     public function tourguide(){
-        return view('frontend.tour-guide.tour-guide');
+        $guiders = Guider::where('is_active', 1)->get(); 
+        return view('frontend.tour-guide.tour-guide',compact('guiders'));
     }
 
     public function tourguideDetails(){

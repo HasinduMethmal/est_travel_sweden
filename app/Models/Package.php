@@ -9,10 +9,8 @@ class Package extends Model
 {
     use HasFactory;
 
-    // Define the table name in case it doesn't follow the default plural convention
     protected $table = 'packages';
 
-    // If you want to define the fields that are mass-assignable
     protected $fillable = [
         'name',
         'description',
@@ -23,7 +21,6 @@ class Package extends Model
         'is_active',
     ];
 
-    // If you want to specify any fields that should be cast to a particular type
     protected $casts = [
         'price' => 'decimal:2',
         'is_active' => 'boolean',

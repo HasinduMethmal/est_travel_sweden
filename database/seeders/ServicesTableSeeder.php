@@ -15,56 +15,20 @@ class ServicesTableSeeder extends Seeder
      */
     public function run()
     {
-        // Instantiate Faker for generating random data
         $faker = Faker::create();
 
-        // Insert dummy data for services
-        DB::table('services')->insert([
-            [
-                'name' => 'Guided City Tour',
-                'category' => 'Tour Guide',
-                'price' => 100.00,
-                'description' => $faker->paragraph,
-                'status' => 'Active',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Airport Pickup',
-                'category' => 'Transportation',
-                'price' => 50.00,
-                'description' => $faker->paragraph,
-                'status' => 'Active',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Luxury Resort Stay',
-                'category' => 'Accommodation',
-                'price' => 500.00,
-                'description' => $faker->paragraph,
-                'status' => 'Inactive',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Helicopter Tour',
-                'category' => 'Adventure',
-                'price' => 800.00,
-                'description' => $faker->paragraph,
-                'status' => 'Active',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Spa and Wellness',
-                'category' => 'Relaxation',
-                'price' => 150.00,
-                'description' => $faker->paragraph,
-                'status' => 'Inactive',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ]);
+        // Insert 10 fake services
+        foreach (range(1, 10) as $index) {
+            DB::table('services')->insert([
+                'name' => $faker->word, // Generate random word for the service name
+                'category' => $faker->word, // Generate random category
+                'price' => $faker->randomFloat(2, 10, 500), // Random price between 10 and 500
+                'description' => $faker->paragraph, // Generate random paragraph for description
+                'image' => $faker->imageUrl(640, 480, 'travel'), // Random image URL
+                'is_active' => $faker->boolean, // Random boolean for active status
+                'created_at' => now(), // Current timestamp
+                'updated_at' => now(), // Current timestamp
+            ]);
+        }
     }
 }

@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\backend\Back_DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\Back_GuiderController;
 use App\Http\Controllers\backend\Back_PackageController;
 use App\Http\Controllers\backend\Back_DestinationController;
+use App\Http\Controllers\backend\Back_GalleryController;
 use App\Http\Controllers\backend\Back_Service_Controller;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\ActivityController;
@@ -13,7 +14,6 @@ use App\Http\Controllers\Frontend\BooknowController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\DestinationController;
 use App\Http\Controllers\Frontend\GalleryController;
-use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\PricePackageController;
 use App\Http\Controllers\Frontend\ServiceController;
@@ -21,36 +21,36 @@ use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\TourguideController;
 
 Route::prefix('dashboard')->group(function(){
-    Route::get('/', [AuthenticatedSessionController::class, 'showLoginForm'])->name('loginForm');
-    Route::post('/login', [AuthenticatedSessionController::class, 'login'])->name('login');
-    Route::post('/logout', [AuthenticatedSessionController::class, 'logout'])->name('logout');
-    Route::get('/signup', [AuthenticatedSessionController::class, 'showSignupForm'])->name('signupForm');
-    Route::post('/signup', [AuthenticatedSessionController::class, 'register'])->name('signup');
+    Route::get('/', [AuthController::class, 'showLoginForm'])->name('loginForm');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signupForm');
+    Route::post('/signup', [AuthController::class, 'register'])->name('signup');
 });
 
 
 Route::middleware(['auth','isadmin'])->prefix('dashboard')->group(function () {
         Route::get('/index',[Back_DashboardController::class,'index'])->name('dashboard.index');
         Route::prefix('guider')->group(function(){
-            Route::get('/',[Back_GuiderController::class,'index'])->name('guider.index');
-            Route::get('/create',[Back_GuiderController::class,'create'])->name('guider.create');
-            Route::get('/edit',[Back_GuiderController::class,'edit'])->name('guider.edit');
-            Route::post('/store', [Back_GuiderController::class, 'store'])->name('guider.store');
-            Route::get('/edit/{id}', [Back_GuiderController::class, 'edit'])->name('guider.edit');
-            Route::put('/update/{id}', [Back_GuiderController::class, 'update'])->name('guider.update');
-            Route::delete('/destroy/{id}', [Back_GuiderController::class, 'destroy'])->name('guider.destroy');
-            Route::get('/show/{id}', [Back_GuiderController::class, 'show'])->name('guider.show');
+            Route::get('/',[Back_GuiderController::class,'index'])->name('back_guider.index');
+            Route::get('/create',[Back_GuiderController::class,'create'])->name('back_guider.create');
+            Route::get('/edit',[Back_GuiderController::class,'edit'])->name('back_guider.edit');
+            Route::post('/store', [Back_GuiderController::class, 'store'])->name('back_guider.store');
+            Route::get('/edit/{id}', [Back_GuiderController::class, 'edit'])->name('back_guider.edit');
+            Route::put('/update/{id}', [Back_GuiderController::class, 'update'])->name('back_guider.update');
+            Route::delete('/destroy/{id}', [Back_GuiderController::class, 'destroy'])->name('back_guider.destroy');
+            Route::get('/show/{id}', [Back_GuiderController::class, 'show'])->name('back_guider.show');
     
         });
     
         Route::prefix('package')->group(function(){
-            Route::get('/',[Back_PackageController::class,'index'])->name('package.index');
-            Route::get('/create',[Back_PackageController::class,'create'])->name('package.create');
-            Route::get('/edit',[Back_PackageController::class,'edit'])->name('package.edit');
-            Route::post('/store', [Back_PackageController::class, 'store'])->name('package.store');
-            Route::get('/edit/{id}', [Back_PackageController::class, 'edit'])->name('package.edit');
-            Route::put('/update/{id}', [Back_PackageController::class, 'update'])->name('package.update');
-            Route::delete('/destroy/{id}', [Back_PackageController::class, 'destroy'])->name('package.destroy');
+            Route::get('/',[Back_PackageController::class,'index'])->name('back_package.index');
+            Route::get('/create',[Back_PackageController::class,'create'])->name('back_package.create');
+            Route::get('/edit',[Back_PackageController::class,'edit'])->name('back_package.edit');
+            Route::post('/store', [Back_PackageController::class, 'store'])->name('back_package.store');
+            Route::get('/edit/{id}', [Back_PackageController::class, 'edit'])->name('back_package.edit');
+            Route::put('/update/{id}', [Back_PackageController::class, 'update'])->name('back_package.update');
+            Route::delete('/destroy/{id}', [Back_PackageController::class, 'destroy'])->name('back_package.destroy');
         
         });
         
@@ -75,23 +75,21 @@ Route::middleware(['auth','isadmin'])->prefix('dashboard')->group(function () {
             Route::delete('/destroy/{id}', [Back_Service_Controller::class, 'destroy'])->name('back_service.destroy');
         });
 
+        Route::prefix('gallery')->group(function(){
+            Route::get('/', [Back_GalleryController::class, 'index'])->name('back_gallery.index');
+            Route::get('/create', [Back_GalleryController::class, 'create'])->name('back_gallery.create');
+            Route::post('/store', [Back_GalleryController::class, 'store'])->name('back_gallery.store');
+            Route::delete('/destroy/{id}', [Back_GalleryController::class, 'destroy'])->name('back_gallery.destroy');
+
+        });
+
 });
 
 
 
 
 Route::get('/',[IndexController::class,'index']);
-Route::prefix('home')->group(function(){
-    Route::get('/travel',[HomeController::class,'travel'])->name('home.travel');
-    Route::get('/agency',[HomeController::class,'agency'])->name('home.agency');
-    Route::get('/beach',[HomeController::class,'beach'])->name('home.beach');
-    Route::get('/countryside',[HomeController::class,'countryside'])->name('home.countryside');
-    Route::get('/forest',[HomeController::class,'forest'])->name('home.forest');
-    Route::get('/hiking',[HomeController::class,'hiking'])->name('home.hiking');
-    Route::get('/resort',[HomeController::class,'resort'])->name('home.resort');
-    Route::get('/tour',[HomeController::class,'tour'])->name('home.tour');
-    Route::get('/yacht',[HomeController::class,'yacht'])->name('home.yacht');
-});
+
 Route::get('/aboutUs',[AboutController::class,'index'])->name('aboutUs');
 
 Route::get('/gallery',[GalleryController::class,'index'])->name('gallery');

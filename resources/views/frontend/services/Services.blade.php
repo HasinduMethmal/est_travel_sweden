@@ -23,110 +23,24 @@ Destination Area
     <section class="position-relative overflow-hidden space" id="destination-sec">
         <div class="container">
             <div class="row gy-4 gx-4">
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img">
-                            <img src="{{asset('frontend/assets/img/destination/destination_4_1.jpg')}}" alt="image">
+                <div class="row">
+                    @foreach($services as $service)
+                        <div class="col-xl-3 col-lg-4 col-md-6 pb-2">
+                            <div class="destination-item th-ani">
+                                <div class="destination-item_img global-img ">
+                                    <!-- Dynamically display the service image -->
+                                    <img src="{{ asset('storage/' . $service->image) }}" alt="image">
+                                </div>
+                                <div class="destination-content">
+                                    <!-- Display the service name dynamically -->
+                                    <h3 class="box-title"><a href="">{{ $service->name }}</a></h3><br>
+                                    <!-- Link to book or inquire about the service -->
+                                    <a href="" class="th-btn style4 th-icon">Book Now</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.html">Photo Shoot</a></h3>
-                            <p class="destination-text">20 Listing</p>
-                            <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img">
-                            <img src="{{asset('frontend/assets/img/destination/destination_4_2.jpg')}}" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.html">Tour Guide</a></h3>
-                            <p class="destination-text">22 Listing</p>
-                            <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img">
-                            <img src="{{asset('frontend/assets/img/destination/destination_4_3.jpg')}}" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.html">Cozy Event</a></h3>
-                            <p class="destination-text">23 Listing</p>
-                            <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img">
-                            <img src="{{asset('frontend/assets/img/destination/destination_4_4.jpg')}}" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.html">Interesting Rest</a></h3>
-                            <p class="destination-text">24 Listing</p>
-                            <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img">
-                            <img src="{{asset('frontend/assets/img/destination/destination_4_5.jpg')}}" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.html">Kayaking</a></h3>
-                            <p class="destination-text">25 Listing</p>
-                            <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img">
-                            <img src="{{asset('frontend/assets/img/destination/destination_4_6.jpg')}}" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.html">Safe Flight</a></h3>
-                            <p class="destination-text">26 Listing</p>
-                            <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img">
-                            <img src="{{asset('frontend/assets/img/destination/destination_4_7.jpg')}}" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.html">Entertainment</a></h3>
-                            <p class="destination-text">27 Listing</p>
-                            <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="destination-item th-ani">
-                        <div class="destination-item_img global-img">
-                            <img src="{{asset('frontend/assets/img/destination/destination_4_8.jpg')}}" alt="image">
-                        </div>
-                        <div class="destination-content">
-                            <h3 class="box-title"><a href="service-details.html">Delicisious Food</a></h3>
-                            <p class="destination-text">28 Listing</p>
-                            <a href="contact.html" class="th-btn style4 th-icon">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
         <div class="shape-mockup shape1 d-none d-xxl-block" data-bottom="17%" data-right="9%">
