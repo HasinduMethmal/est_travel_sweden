@@ -12,19 +12,19 @@
 }
 
 
-/* Reduce button size */
+/* header button styles */
 .header-button .th-btn {
-    font-size: 14px !important; /* Reduce font size */
-    padding: 9px 16px !important; /* Adjust padding */
+    font-size: 14px !important;
+    padding: 9px 16px !important; 
     height: auto !important;
 }
 
 .header-button .th-btn:hover {
     background-color:#009dc4 !important; 
-    color: white !important; /* Ensure text remains visible */
+    color: white !important; 
 }
 
-/* Remove any unwanted invisible hover areas */
+
 .header-button .th-btn::before,
 .header-button .th-btn::after {
     display: none !important; 
@@ -118,6 +118,7 @@
                             </div>
                         </div>
                         <div class="col-auto me-xl-auto">
+                    
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li >
@@ -152,6 +153,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

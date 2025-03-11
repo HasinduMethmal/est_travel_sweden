@@ -84,7 +84,9 @@
 <button id="addTravelerBtn" class="btn btn-primary w-20 mb-3">Add Traveler</button>
 
 <!-- Traveler Form Section (Initially Hidden) -->
-<div id="travelerForm" class="mb-3 p-3 border rounded bg-white" style="display: none; max-width: 1000px;">
+<div id="travelerForm" class="mb-3 p-3 border rounded bg-white position-relative" style="display: none; max-width: 1000px;">
+  
+
     <h6>Identity Information</h6>
 
     <div class="row g-2">
@@ -162,6 +164,9 @@
 
 
 
+
+
+
     </div>
 </div>
 
@@ -214,6 +219,8 @@
         $(document).on('click', '.deleteBtn', function () {
             $(this).closest('tr').remove();
         });
+
+
     });
 </script>
 

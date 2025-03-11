@@ -86,13 +86,17 @@
                         <div class="destination-box gsap-cursor">
                             <div class="destination-img">
                                 <!-- Check if the destination has an image -->
-                                <img src="{{ asset('storage/' . $destination->image) }}" alt="destination image">
+                                <img src="{{ asset('storage/' . $destination->image) }}" alt="destination image"   style="width: 450px; height: 500px;">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title">
-                                            {{ $destination->name }}
+                                    <h4 class="box-title">
+                                            <a href="destination-details.html">{{$destination -> name}}</a>
+
                                         </h4>
-                                      
+                                        <span class="destination-subtitle">{{$destination -> location}}</span>
+                                    </div>
+                                    <div class="">
+                                        <a href="destination-details.html" class="th-btn style2 th-icon">View Detail</a>
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +216,7 @@ Service Area
                                 <div class="tour-box th-ani gsap-cursor">
                                     <div class="tour-box_img global-img">
                                         <!-- Assuming the package has an image attribute -->
-                                        <img src="{{ asset('storage/' . $package->image) }}" alt="{{ $package->title }}">
+                                        <img src="{{ asset('storage/' . $package->image) }}" alt="{{ $package->title }}" style="width: 312px; height: 274px;">
                                     </div>
                                     <div class="tour-content">
                                         <!-- Title, Link to Package Details, and Price -->
