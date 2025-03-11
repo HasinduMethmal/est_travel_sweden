@@ -86,12 +86,17 @@
                         <div class="destination-box gsap-cursor">
                             <div class="destination-img">
                                 <!-- Check if the destination has an image -->
-                                <img src="{{ asset('storage/' . $destination->image) }}" alt="destination image">
+                                <img src="{{ asset('storage/' . $destination->image) }}" alt="destination image"   style="width: 450px; height: 500px;">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title">
-                                            {{ $destination->name }}
+                                    <h4 class="box-title">
+                                            <a href="destination-details.html">{{$destination -> name}}</a>
+
                                         </h4>
+                                        <span class="destination-subtitle">{{$destination -> location}}</span>
+                                    </div>
+                                    <div class="">
+                                        <a href="destination-details.html" class="th-btn style2 th-icon">View Detail</a>
                                     </div>
                                 </div>
                             </div>
@@ -110,19 +115,19 @@ About Area
     <!--==============================
 About Area  
 ==============================-->
-    <div class="about-area position-relative overflow-hidden space" id="about-sec">
+<div class="about-area position-relative overflow-hidden space" id="about-sec">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
                     <div class="img-box1">
                         <div class="img1">
-                            <img src="frontend/images/home_img.png" alt="About">
+                            <img src="frontend/assets/img/normal/about_1_1.jpg" alt="About">
                         </div>
                         <div class="img2">
-                            <img src="frontend/images/home_img1.png" alt="About">
+                            <img src="frontend/assets/img/normal/about_1_2.jpg" alt="About">
                         </div>
                         <div class="img3">
-                            <img src="frontend/images/home_img1.png" alt="About">
+                            <img src="frontend/assets/img/normal/about_1_3.jpg" alt="About">
                         </div>
                     </div>
                 </div>
@@ -211,7 +216,7 @@ Service Area
                                 <div class="tour-box th-ani gsap-cursor">
                                     <div class="tour-box_img global-img">
                                         <!-- Assuming the package has an image attribute -->
-                                        <img src="{{ asset('storage/' . $package->image) }}" alt="{{ $package->title }}">
+                                        <img src="{{ asset('storage/' . $package->image) }}" alt="{{ $package->title }}" style="width: 312px; height: 274px;">
                                     </div>
                                     <div class="tour-content">
                                         <!-- Title, Link to Package Details, and Price -->
@@ -224,6 +229,8 @@ Service Area
                                         <!-- Display duration if available -->
                                         <div class="tour-action">
                                             <span><i class="fa-light fa-clock"></i>{{ $package->duration }} Days</span>
+                                            <a href="{{ route('booking', ['id' => $package->id]) }}" class="th-btn style4 th-icon">Book Now</a>
+
                                         </div>
                                     </div>
                                 </div>

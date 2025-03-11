@@ -136,164 +136,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="th-comments-wrap style2 ">
-                        <h2 class="blog-inner-title h4">Reviews (3)</h2>
-                        <ul class="comment-list">
-                            <li class="th-comment-item">
-                                <div class="th-post-comment">
-                                    <div class="comment-avater">
-                                        <img src="{{asset('frontend/assets/img/blog/comment-author-1.jpg')}}" alt="Comment Author">
-                                    </div>
-                                    <div class="comment-content">
-                                        <h3 class="name">Adam Jhon</h3>
-                                        <div class="commented-wrapp">
-                                            <span class="commented-on">20 Jun, 2024</span>
-                                            <span class="commented-time">08:56pm </span>
-                                            <span class="comment-review">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </span>
-                                        </div>
-                                        <p class="text">Credibly pontificate transparent quality vectors with quality mindshare. Efficiently
-                                            architect worldwide strategic theme areas after user.</p>
-                                        <div class="reply_and_edit">
-                                            <i class="fa-solid fa-thumbs-up"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="children">
-                                    <li class="th-comment-item">
-                                        <div class="th-post-comment">
-                                            <div class="comment-avater">
-                                                <img src="{{asset('frontend/assets/img/blog/comment-author-4.jpg')}}" alt="Comment Author">
-                                            </div>
-                                            <div class="comment-content">
-                                                <div class="">
-                                                    <h3 class="name">Maria Willson</h3>
-                                                    <div class="commented-wrapp">
-                                                        <span class="commented-on">23 Jun, 2024</span>
-                                                        <span class="commented-time">08:56pm </span>
-                                                        <span class="comment-review">
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                            <i class="fa-solid fa-star"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <p class="text">It is different from airport transfer or port transfer, which are services
-                                                    that pick you up</p>
-                                                <div class="reply_and_edit">
-                                                    <i class="fa-solid fa-thumbs-up"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="th-comment-item">
-                                <div class="th-post-comment">
-                                    <div class="comment-avater">
-                                        <img src="{{asset('frontend/assets/img/blog/comment-author-5.jpg')}}" alt="Comment Author">
-                                    </div>
-                                    <div class="comment-content">
-                                        <div class="">
-                                            <h3 class="name">Michel Edwards</h3>
-                                            <div class="commented-wrapp">
-                                                <span class="commented-on">27 Jun, 2024</span>
-                                                <span class="commented-time">08:56pm </span>
-                                                <span class="comment-review">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <p class="text">Credibly pontificate transparent quality vectors with quality mindshare. Efficiently
-                                            architect worldwide strategic theme areas after user.</p>
-                                        <div class="reply_and_edit">
-                                            <i class="fa-solid fa-thumbs-up"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> <!-- Comment end --> <!-- Comment Form -->
-                    <div class="th-comment-form ">
-                        <div class="row">
-                            <h3 class="blog-inner-title h4 mb-2">Leave a Reply</h3>
-                            <p class="mb-25">Your email address will not be published. Required fields are marked</p>
-                            <div class="col-md-6 form-group">
-                                <input type="text" placeholder="Full Name*" class="form-control" required>
-                                <i class="far fa-user"></i>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" placeholder="Your Email*" class="form-control" required>
-                                <i class="far fa-envelope"></i>
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="text" placeholder="Website" class="form-control" required>
-                                <i class="far fa-globe"></i>
-                            </div>
-                            <div class="col-12 form-group">
-                                <textarea placeholder="Comment*" class="form-control"></textarea>
-                                <i class="far fa-pencil"></i>
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="checkbox" id="html">
-                                <label for="html">Save my name, email, and website in this browser for the next time I
-                                    comment.</label>
-                            </div>
-                            <div class="col-12 form-group mb-0">
-                                <button class="th-btn">Send Message<img src="{{asset('frontend/assets/img/icon/plane2.svg')}}" alt=""></button>
-                            </div>
-                        </div>
-                    </div>
+                
+                  
                 </div>
             </div>
             <div class="col-xxl-4 col-lg-5">
                 <aside class="sidebar-area style3">
-                    <div class="widget widget_search  ">
-                        <form class="search-form">
-                            <input type="text" placeholder="Search">
-                            <button type="submit"><i class="far fa-search"></i></button>
-                        </form>
-                    </div>
-                    <div class="widget widget_categories  ">
-                        <h3 class="widget_title">Categories</h3>
-                        <ul>
-                            <li>
-                                <a href="blog.html"><img src="{{asset('frontend/assets/img/theme-img/map.svg')}}" alt="">City Tour</a>
-                                <span>(8)</span>
-                            </li>
-                            <li>
-                                <a href="blog.html"><img src="{{asset('frontend/assets/img/theme-img/map.svg')}}" alt="">Beach Tours</a>
-                                <span>(6)</span>
-                            </li>
-                            <li>
-                                <a href="blog.html"><img src="{{asset('frontend/assets/img/theme-img/map.svg')}}" alt="">Wildlife Tours</a>
-                                <span>(2)</span>
-                            </li>
-                            <li>
-                                <a href="blog.html"><img src="{{asset('frontend/assets/img/theme-img/map.svg')}}" alt="">News & Tips</a>
-                                <span>(7)</span>
-                            </li>
-                            <li>
-                                <a href="blog.html"><img src="{{asset('frontend/assets/img/theme-img/map.svg')}}" alt="">Adventure Tours</a>
-                                <span>(9)</span>
-                            </li>
-                            <li>
-                                <a href="blog.html"><img src="{{asset('frontend/assets/img/theme-img/map.svg')}}" alt="">Mountain Tours</a>
-                                <span>(10)</span>
-                            </li>
-                        </ul>
-                    </div>
+                   
                     <div class="widget  ">
                         <h3 class="widget_title">Recent Posts</h3>
                         <div class="recent-post-wrap">
@@ -333,19 +182,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="widget widget_tag_cloud  ">
-                        <h3 class="widget_title">Popular Tags</h3>
-                        <div class="tagcloud">
-                            <a href="blog.html">Tour</a>
-                            <a href="blog.html">Adventure</a>
-                            <a href="blog.html">Rent</a>
-                            <a href="blog.html">Innovate</a>
-                            <a href="blog.html">Hotel</a>
-                            <a href="blog.html">Modern</a>
-                            <a href="blog.html">Luxury</a>
-                            <a href="blog.html">Travel</a>
-                        </div>
-                    </div>
+                
                     <div class="widget widget_offer  " data-bg-src="{{asset('frontend/assets/img/bg/widget_bg_1.jpg')}}">
                         <div class="offer-banner">
                             <div class="offer">
