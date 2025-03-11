@@ -32,7 +32,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="{{ route('aboutUs') }}">About us</a></li>
                                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                                    <li><a href="{{ route('back_service.index') }}">Our Services</a></li>
+                                    <li><a href="{{ route('services.services') }}">Our Services</a></li>
                                     <li><a href="{{ route('booknow') }}">Tour Booking Now</a></li>
                                 </ul>
                             </div>
@@ -71,52 +71,28 @@
                     </div>
                     <div class="col-md-6 col-xl-auto">
                         <div class="widget footer-widget">
-                            <h3 class="widget_title">Instagram Post</h3>
+                            <h3 class="widget_title">Blog</h3>
                             <div class="sidebar-gallery">
+                                @foreach(App\Models\Blog::latest()->take(2)->get() as $blog)
                                 <div class="gallery-thumb">
-                                    <img src="frontend/assets/img/widget/gallery_1_1.jpg" alt="Gallery Image">
-                                    <a target="_blank" href="https://www.instagram.com/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{ route('blog.blog') }}"><img src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image"></a>
+                                    <p  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: block; font-size: 10px;">{{ $blog->topic }}</p>
+                                    <p style="font-size: 11px;"><i class="fa-solid fa-calendar-days"></i>{{ $blog->created_at->format('d M, Y') }}</p>
                                 </div>
-                                <div class="gallery-thumb">
-                                    <img src="frontend/assets/img/widget/gallery_1_2.jpg" alt="Gallery Image">
-                                    <a target="_blank" href="https://www.instagram.com/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <div class="gallery-thumb">
-                                    <img src="frontend/assets/img/widget/gallery_1_3.jpg" alt="Gallery Image">
-                                    <a target="_blank" href="https://www.instagram.com/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <div class="gallery-thumb">
-                                    <img src="frontend/assets/img/widget/gallery_1_4.jpg" alt="Gallery Image">
-                                    <a target="_blank" href="https://www.instagram.com/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <div class="gallery-thumb">
-                                    <img src="frontend/assets/img/widget/gallery_1_5.jpg" alt="Gallery Image">
-                                    <a target="_blank" href="https://www.instagram.com/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
-                                </div>
-                                <div class="gallery-thumb">
-                                    <img src="frontend/assets/img/widget/gallery_1_6.jpg" alt="Gallery Image">
-                                    <a target="_blank" href="https://www.instagram.com/" class="gallery-btn"><i class="fab fa-instagram"></i></a>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="copyright-wrap" data-bg-src="frontend/assets/img/bg/copyright_bg_1.jpg">
+        <div class="copyright-wrap" data-bg-src="">
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-md-6">
-                        <p class="copyright-text">Copyright 2024 <a href="home-travel.html">Tourm</a>. All Rights Reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-end d-none d-md-block">
-                        <div class="footer-card">
-                            <span class="title">We Accept</span>
-                            <img src="frontend/assets/img/shape/cards.png" alt="">
-                        </div>
+                        <p class="copyright-text"> Copyright @ 2025 Best Time Travel</p>
                     </div>
                 </div>
-
             </div>
         </div>
 
