@@ -86,7 +86,7 @@
 </div>
 
 
-<div class="container" style="max-width: 1300px; margin: auto; margin-bottom: 100px;">
+<div class="container-fluid" style="max-width: 1500px; margin: auto; margin-bottom: 100px;">
     <!-- First Row: Vision Statement + Mission Statement -->
     <div class="row align-items-center">
         <!-- Vision Box -->

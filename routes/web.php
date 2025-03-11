@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\PricePackageController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\TourguideController;
+use App\Http\Controllers\Frontend\BookingController;
 
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [AuthController::class, 'showLoginForm'])->name('loginForm');
@@ -86,6 +87,8 @@ Route::middleware(['auth','isadmin'])->prefix('dashboard')->group(function () {
 });
 
 
+
+Route::get('/booking/{id}', [BookingController::class, 'show'])->name('booking');
 
 
 Route::get('/',[IndexController::class,'index']);
