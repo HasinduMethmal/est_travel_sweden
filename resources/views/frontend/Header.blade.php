@@ -6,12 +6,64 @@
 
     .main-menu ul li a {
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
     color: #333; 
     font-weight: bold;
 }
 
+
+/* header button styles */
+.header-button .th-btn {
+    font-size: 14px !important;
+    padding: 9px 16px !important; 
+    height: auto !important;
+}
+
+.header-button .th-btn:hover {
+    background-color:#009dc4 !important; 
+    color: white !important; 
+}
+
+
+.header-button .th-btn::before,
+.header-button .th-btn::after {
+    display: none !important; 
+}
 </style>
+
+
+
+<header class="th-header header-layout1">
+<div class="header-top">
+            <div class="container th-container">
+                <div class="row justify-content-center justify-content-xl-between align-items-center">
+                    <div class="col-auto d-none d-md-block">
+                        <div class="header-links">
+                            <ul>
+                                <li class="d-none d-xl-inline-block"><i class="fa-sharp fa-regular  fa-location-dot"></i>
+                                    <span>Andra Langgatan 7, 413 03 Gotheburg, Sweden</span>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="header-right">
+                         
+                            <div class="header-links">
+                                <ul>
+                              
+                                    <li><a href="#login-form" class="popup-content"> Register<i class="fa-regular fa-user"></i></a>
+                                    </li>
+                                    <li><a href="#login-form" class="popup-content">Sign In<i class="fa-regular fa-user"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 <div class="th-menu-wrapper onepage-nav">
     <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
@@ -66,6 +118,7 @@
                             </div>
                         </div>
                         <div class="col-auto me-xl-auto">
+                    
                             <nav class="main-menu d-none d-xl-inline-block">
                                 <ul>
                                     <li >
@@ -95,11 +148,12 @@
                         </div>
                         <div class="col-auto d-none d-xl-block">
                             <div class="header-button">
-                                <a href="{{ route('booknow') }}" class="th-btn style1 th-icon" style=" font-size:17px;">Book Now</a>
+                                <a href="{{ route('booknow') }}" class="th-btn style1" style=" font-size:17px;">Book Now<i class="fas fa-arrow-right" style="font-size:17px;"></i></button></a>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
