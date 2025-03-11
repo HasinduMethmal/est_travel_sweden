@@ -25,7 +25,7 @@ class Back_BlogController extends Controller
         $request->validate([
             'description' => 'required|string',
             'topic' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5012',
         ]);
 
         if ($request->hasFile('image')) {
@@ -52,7 +52,7 @@ class Back_BlogController extends Controller
         $request->validate([
             'description' => 'required|string',
             'topic' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5012',
         ]);
 
         $blog = Blog::findOrFail($id);

@@ -28,7 +28,7 @@ class Back_GalleryController extends Controller
     {
         $request->validate([
             'images' => 'required|array', 
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:40960', 
         ]);
 
         foreach ($request->file('images') as $image) {
