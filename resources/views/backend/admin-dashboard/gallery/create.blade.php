@@ -22,10 +22,14 @@
             <!-- Update form to handle multiple file uploads -->
             <form action="{{ route('back_gallery.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
-              <div class="fallback">
-                <input name="images[]" type="file" multiple><br><br>
-                <input type="submit" class="btn btn-primary" value="Upload"> 
-              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Upload Image</label>
+                <input type="file" name="images[]" id="image" class="form-control @error('image') is-invalid @enderror" accept="image/*" required multiple>
+                @error('image')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
             </form>
           </div>
         </div>

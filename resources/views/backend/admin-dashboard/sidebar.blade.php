@@ -58,6 +58,11 @@
             <div data-i18n="Gallery">Gallery</div>
           </a>
         </li>
+        <li class="menu-item active">
+          <a href="{{route('back_blog.index')}}" class="menu-link">
+            <div data-i18n="Blog">Blog</div>
+          </a>
+        </li>
 
       </ul>
     </li>

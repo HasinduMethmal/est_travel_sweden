@@ -139,13 +139,7 @@
                                             <li><a href="{{route('pricepackage.pricepackage')}}">Price Packages</a></li>                                         
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
+                                    <li ><a href="{{route('blog.blog')}}">Blog</a></li>
                                     <li><a href="{{ route('contact') }}">Contact us</a></li>
                                 </ul>
                             </nav>

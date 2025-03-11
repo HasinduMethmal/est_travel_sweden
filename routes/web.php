@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\backend\Back_BlogController;
 use App\Http\Controllers\backend\Back_DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\Back_GuiderController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\backend\Back_GalleryController;
 use App\Http\Controllers\backend\Back_Service_Controller;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\ActivityController;
+use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\BooknowController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\DestinationController;
@@ -84,11 +86,30 @@ Route::middleware(['auth','isadmin'])->prefix('dashboard')->group(function () {
 
         });
 
+        Route::prefix('blog')->group(function(){
+            Route::get('/', [Back_BlogController::class, 'index'])->name('back_blog.index');
+            Route::get('/create', [Back_BlogController::class, 'create'])->name('back_blog.create');
+            Route::post('/store', [Back_BlogController::class, 'store'])->name('back_blog.store');
+            Route::get('/edit/{id}', [Back_BlogController::class, 'edit'])->name('back_blog.edit');
+            Route::put('/update/{id}', [Back_BlogController::class, 'update'])->name('back_blog.update');
+            Route::delete('/destroy/{id}', [Back_BlogController::class, 'destroy'])->name('back_blog.destroy');
+
+        });
+
 });
 
 
 
 Route::get('/booking/{id}', [BookingController::class, 'show'])->name('booking');
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/',[IndexController::class,'index']);
@@ -113,25 +134,13 @@ Route::prefix('price-package')->group(function(){
 
 });
 
-Route::prefix('tour-guide')->group(function(){
-    Route::get('/',[TourguideController::class,'tourguide'])->name('tourguide.tourguide');
-    Route::get('/details',[TourguideController::class,'tourguideDetails'])->name('tourguide.details');
-
-});
 Route::get('/contact',[ContactController::class,'index'])->name('contact');
 Route::prefix('service')->group(function(){
     Route::get('/',[ServiceController::class,'service'])->name('services.services');
     Route::get('/details',[ServiceController::class,'serviceDetails'])->name('services.details');
 
 });
-Route::prefix('activities')->group(function(){
-    Route::get('/',[ActivityController::class,'activities'])->name('activities.activities');
-    Route::get('/details',[ActivityController::class,'activitiesDetails'])->name('activities.details');
 
-});
-Route::prefix('pages')->group(function(){
-    Route::prefix('shop')->group(function(){
-        Route::get('/',[ShopController::class,'shop'])->name('shop');
-        Route::get('/details',[ShopController::class,'shop'])->name('shop.details');
-    });
+Route::prefix('blog')->group(function(){
+    Route::get('/',[BlogController::class,'index'])->name('blog.blog');
 });
