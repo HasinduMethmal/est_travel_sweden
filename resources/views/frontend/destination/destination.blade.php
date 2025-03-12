@@ -46,16 +46,18 @@ Product Area
                                     <div class="tour-box th-ani">
                                         <div class="tour-box_img global-img">
                                             <!-- Display the destination image dynamically -->
-                                            <img src="{{ asset('storage/' . $destination->image) }}" alt="{{ $destination->name }}">
+                                            <img src="{{ asset('storage/' . $destination->image) }}" alt="{{ $destination->name }}" style="width: 312px; height: 354px;">
                                         </div>
                                         <div class="tour-content">
                                             <h3 class="box-title">
                                                 <!-- Dynamic link to the destination details page -->
                                                 <a href="">{{ $destination->name }}</a>
                                             </h3>
+                                              <span class="destination-subtitle">{{$destination -> location}}</span>
                                             <div class="tour-action">
                                                 <!-- Dynamic View Detail button -->
-                                                <a href="{{ route('contact') }}" class="th-btn style4 th-icon">View Detail</a>
+                                                <a href="{{ route('destination.details', ['id' => $destination->id]) }}" class="th-btn style4 th-icon" style="padding: 5px 10px; font-size: 14px;">View Detail</a>
+
                                             </div>
                                         </div>
                                     </div>

@@ -14,7 +14,13 @@ class DestinationController extends Controller{
         return view('frontend.destination.destination',compact('destinations'));
     }
 
-    public function destinationDetails(){
+    /*public function destinationDetails(){
         return view('frontend.destination.details');
+    }*/
+
+    public function show($id)
+    {
+        $destinations = Destination::findOrFail($id);
+        return view('frontend.destination.details', compact('destinations'));
     }
 }

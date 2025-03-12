@@ -121,13 +121,13 @@ About Area
                 <div class="col-xl-6">
                     <div class="img-box1">
                         <div class="img1">
-                            <img src="frontend/assets/img/normal/about_1_1.jpg" alt="About">
+                            <img src="frontend/images/home_img.png" alt="About">
                         </div>
                         <div class="img2">
-                            <img src="frontend/assets/img/normal/about_1_2.jpg" alt="About">
+                            <img src="frontend/images/home_img1.png" alt="About">
                         </div>
                         <div class="img3">
-                            <img src="frontend/assets/img/normal/about_1_3.jpg" alt="About">
+                            <img src="frontend/images/home_img2.png" alt="About">
                         </div>
                     </div>
                 </div>
