@@ -29,13 +29,13 @@ Destination Area
                             <div class="destination-item th-ani">
                                 <div class="destination-item_img global-img ">
                                     <!-- Dynamically display the service image -->
-                                    <img src="{{ asset('storage/' . $service->image) }}" alt="image">
+                                    <img src="{{ asset('storage/' . $service->image) }}" alt="image" style="width: 312px; height: 274px;">
                                 </div>
                                 <div class="destination-content">
                                     <!-- Display the service name dynamically -->
                                     <h3 class="box-title"><a href="">{{ $service->name }}</a></h3><br>
                                     <!-- Link to book or inquire about the service -->
-                                    <a href="" class="th-btn style4 th-icon">Book Now</a>
+                                    <a href="" class="th-btn style4 th-icon" style="margin-top:-12px;">Book Now</a>
                                 </div>
                             </div>
                         </div>

@@ -71,9 +71,9 @@
                     </div>
                     <div class="col-md-6 col-xl-auto">
                         <div class="widget footer-widget">
-                            <h3 class="widget_title">Blog</h3>
+                            <h3 class="widget_title">Latest Blogs</h3>
                             <div class="sidebar-gallery">
-                                @foreach(App\Models\Blog::latest()->take(2)->get() as $blog)
+                                @foreach(App\Models\Blog::latest()->take(3)->get() as $blog)
                                 <div class="gallery-thumb">
                                     <a href="{{ route('blog.blog') }}"><img src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image"></a>
                                     <p  style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: block; font-size: 10px;">{{ $blog->topic }}</p>
@@ -96,4 +96,5 @@
             </div>
         </div>
 
+      
     </footer>

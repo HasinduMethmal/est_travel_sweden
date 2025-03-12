@@ -22,6 +22,13 @@ use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\TourguideController;
 use App\Http\Controllers\Frontend\BookingController;
+use App\Http\Controllers\Frontend\Auth\UserAuthController;
+
+
+
+
+Route::get('/user/login', [UserAuthController::class, 'showLogin'])->name('user.login');
+Route::get('/user/register', [UserAuthController::class, 'showRegister'])->name('user.register');
 
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [AuthController::class, 'showLoginForm'])->name('loginForm');
@@ -110,17 +117,16 @@ Route::get('/booking/{id}', [BookingController::class, 'show'])->name('booking')
 
 
 
-
-
 Route::get('/',[IndexController::class,'index']);
 
 Route::get('/aboutUs',[AboutController::class,'index'])->name('aboutUs');
 
 Route::get('/gallery',[GalleryController::class,'index'])->name('gallery');
 Route::get('/booknow',[BooknowController::class,'index'])->name('booknow');
+
 Route::prefix('destination')->group(function(){
     Route::get('/',[DestinationController::class,'destination'])->name('destination.destination');
-    Route::get('/details',[DestinationController::class,'destinationDetails'])->name('destination.details');
+    Route::get('/details/{id}',[DestinationController::class,'show'])->name('destination.details');
 
 });
 Route::prefix('tour-guide')->group(function(){
