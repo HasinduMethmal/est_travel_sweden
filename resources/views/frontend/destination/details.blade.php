@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="breadcumb-wrapper background-image" style="background-image: url({{ asset('frontend/images/destination_2.png') }});">
+<div class="breadcumb-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('frontend/images/destination_2.png'); background-size: cover; background-position: center center; height: 400px;">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Destination Details</h1>
@@ -21,71 +21,18 @@
         <div class="row">
             <div class="col-xxl-8 col-lg-7">
                 <div class="page-single">
-                    <div class="service-img"><img src="{{asset('frontend/assets/img/destination/destination-details.jpg')}}" alt=""></div>
+                    <div class="service-img"><img src="{{ asset('storage/' . $destinations->image) }}" alt="{{ $destinations->name }}" style="width:872px;height:536px;"></div>
                     <div class="page-content d-block">
                         <div class="page-meta mt-50 mb-45">
                             <a class="page-tag" href="tour.html">Featured</a>
                             <span class="ratting"><i class="fa-sharp fa-solid fa-star"></i><span>4.8</span></span>
                         </div>
-                        <h2 class="box-title">Explore the Beauty of Maldives and enjoy</h2>
-                        <p class="blog-text mb-30">voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                            ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                            Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
-                            modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Quis autem vel
-                            eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
-                            illum qui dolorem eum fugiat quo voluptas nulla pariatur Quis autem vel eum iure
-                            reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui
-                            dolorem eum fugiat quo voluptas nulla pariatur</p>
-                        <p class="blog-text mb-35"> ‍Whether you work from home or commute to a nearby office, the
-                            energy-efficient features of your home contribute to a productive and eco-conscious workday.
-                            Smart home systems allow you to monitor and control energy usage, ensuring that your
-                            environmental impact remains minimal.</p>
-                        <h2 class="box-title">Basic Information</h2>
-                        <p class="blog-text mb-35">voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                            ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                            Dolorem ipsum quia dolor sit amet, consectetur, adipisci.</p>
-                        <div class="destination-checklist">
-                            <div class="checklist style2">
-                                <ul>
-                                    <li>Destination</li>
-                                    <li>Visa Requirements</li>
-                                    <li>Language</li>
-                                    <li>Currency Used</li>
-                                    <li>Area (km2)</li>
-                                    <li>Destination</li>
-                                    <li>Per Person</li>
-                                </ul>
-                            </div>
-                            <div class="checklist style2">
-                                <ul>
-                                    <li>Netherlands</li>
-                                    <li>On Arrival Visa</li>
-                                    <li>English</li>
-                                    <li>Euro</li>
-                                    <li>25,859km2</li>
-                                    <li>25 Tour Places</li>
-                                    <li>$890.00</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <blockquote>
-                            <p>Join your neighbors for an eco-friendly social gathering as the day comes to a
-                                conclusion. Savor refreshments made with sustainable ingredients and have discussions on
-                                sustainable life. By fostering a sense of community.</p>
-                            <cite>Michel Clarck</cite>
-                        </blockquote>
-                        <p class="blog-text mb-35">Dinning: Prepare a dinner using fresh ingredients from your own garden
-                            or the local CSA program. The energy-efficient appliances in your kitchen make cooking a
-                            breeze while minimizing your overall energy consumption. Share a meal with neighbors, The
-                            quiet night offers a peaceful ambiance, reinforcing the community's commitment to a
-                            sustainable, low-impact lifestyle.</p>
-                        <p class="blog-text mb-35">
-                            Living sustainably at Realar Residence is more than a choice; it's an immersive experience
-                            that shapes every moment of your day. From the moment you wake up in your solar-powered home
-                            to the evening gatherings with like-minded neighbors</p>
-                        <h3 class="">The sustainable traveller These 6 hotels epitomise ethical luxury</h3>
-                        <p class="mb-35"> ‍Whether you work from home or commute to a nearby office, the energy-efficient features of your home contribute to a productive and eco-conscious workday. Smart home systems allow you to monitor and control energy usage, ensuring that your environmental impact remains minimal.</p>
-                        <div class="service-inner-img mb-40"><img src="{{asset('frontend/assets/img/destination/destination-inner-1.jpg')}}" alt=""></div>
+                        <h2 class="box-title">{{ $destinations->name }}</h2>
+                        <h6 class="">Location : {{ $destinations->location }}</h6>
+                        <p class="blog-text mb-30">{{$destinations ->description}}</p>
+                      
+                       
+                        
                         <h2 class="box-title">Highlights</h2>
                         <div class="checklist">
                             <ul>
@@ -99,43 +46,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="destination-gallery-wrapper">
-                        <h3 class="page-title mt-30 mb-30">From our gallery</h3>
-                        <div class="row gy-4 gallery-row filter-active">
-                            <div class="col-xxl-auto filter-item">
-                                <div class="gallery-box style3">
-                                    <div class="gallery-img global-img">
-                                        <img src="{{asset('frontend/assets/img/gallery/gallery_6_1.jpg')}}" alt="gallery image">
-                                        <a href="{{asset('frontend/assets/img/gallery/gallery_6_1.jpg')}}" class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-auto filter-item">
-                                <div class="gallery-box style3">
-                                    <div class="gallery-img global-img">
-                                        <img src="{{asset('frontend/assets/img/gallery/gallery_6_2.jpg')}}" alt="gallery image">
-                                        <a href="{{asset('frontend/assets/img/gallery/gallery_6_2.jpg')}}" class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-auto filter-item">
-                                <div class="gallery-box style3">
-                                    <div class="gallery-img global-img">
-                                        <img src="{{asset('frontend/assets/img/gallery/gallery_6_3.jpg')}}" alt="gallery image">
-                                        <a href="{{asset('frontend/assets/img/gallery/gallery_6_3.jpg')}}" class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-auto filter-item">
-                                <div class="gallery-box style3">
-                                    <div class="gallery-img global-img">
-                                        <img src="{{asset('frontend/assets/img/gallery/gallery_6_4.jpg')}}" alt="gallery image">
-                                        <a href="{{asset('frontend/assets/img/gallery/gallery_6_4.jpg')}}" class="icon-btn popup-image"><i class="fal fa-magnifying-glass-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  
                 
                   
                 </div>
@@ -144,7 +55,7 @@
                 <aside class="sidebar-area style3">
                    
                     <div class="widget  ">
-                        <h3 class="widget_title">Recent Posts</h3>
+                        <h3 class="widget_title">Recent Blogs</h3>
                         <div class="recent-post-wrap">
                             <div class="recent-post">
                                 <div class="media-img">

@@ -2,6 +2,7 @@
 
 @section ('title', 'Blog')
 
+
 @section('content')
 
 <section class="th-blog-wrapper space-top space-extra-bottom">
@@ -12,7 +13,7 @@
                 <div class="th-blog blog-single has-post-thumbnail">
                     <div class="blog-img">
                         <!-- Display the blog image dynamically -->
-                            <img src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image" width="100" height="80">
+                            <img src="{{ asset('storage/' . $blog->image) }}" alt="Blog Image" style=" max-width:80px;max-height:150px;">
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
@@ -36,6 +37,7 @@
             </div>
         </div>
     </div>
+    
 </section>
 
 @endsection

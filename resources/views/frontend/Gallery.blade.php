@@ -33,7 +33,7 @@ Gallery Area
                     <div class="gallery-box style5">
                         <div class="gallery-img global-img">
                             <!-- Dynamically display images stored in the public directory -->
-                            <img src="{{ asset('storage/' . $gallery->image) }}" alt="gallery image">
+                            <img src="{{ asset('storage/' . $gallery->image) }}" alt="gallery image" style="width: 508px; height: 690px;">
                             <a href="{{ asset('storage/' . $gallery->image) }}" class="icon-btn popup-image">
                                 <i class="fal fa-magnifying-glass-plus"></i>
                             </a>

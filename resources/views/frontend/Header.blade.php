@@ -35,35 +35,40 @@
 
 <header class="th-header header-layout1">
 <div class="header-top">
-            <div class="container th-container">
-                <div class="row justify-content-center justify-content-xl-between align-items-center">
-                    <div class="col-auto d-none d-md-block">
-                        <div class="header-links">
-                            <ul>
-                                <li class="d-none d-xl-inline-block"><i class="fa-sharp fa-regular  fa-location-dot"></i>
-                                    <span>Andra Langgatan 7, 413 03 Gotheburg, Sweden</span>
-                                </li>
-                               
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="header-right">
-                         
-                            <div class="header-links">
-                                <ul>
-                              
-                                    <li><a href="#login-form" class="popup-content"> Register<i class="fa-regular fa-user"></i></a>
-                                    </li>
-                                    <li><a href="#login-form" class="popup-content">Sign In<i class="fa-regular fa-user"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+    <div class="container th-container">
+        <div class="row justify-content-center justify-content-xl-between align-items-center">
+            <div class="col-auto d-none d-md-block">
+                <div class="header-links">
+                    <ul>
+                        <li class="d-none d-xl-inline-block">
+                            <i class="fa-sharp fa-regular fa-location-dot"></i>
+                            <span>Andra Langgatan 7, 413 03 Gothenburg, Sweden</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="header-right">
+                    <div class="header-links">
+                        <ul>
+                            <li>
+                                <a href="{{ route('user.register') }}" class="popup-content">
+                                    Register <i class="fa-regular fa-user"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.login') }}" class="popup-content">
+                                    Sign In <i class="fa-regular fa-user"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
 <div class="th-menu-wrapper onepage-nav">
     <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>

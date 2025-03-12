@@ -51,12 +51,12 @@
                 <label for="child" class="form-check-label">Couple</label>
             </div>
             <div>
-                <input type="radio" name="travelerType" value="adult" id="adult" class="form-check-input" checked>
-                <label for="adult" class="form-check-label">Family</label>
+                <input type="radio" name="travelerType" value="family" id="family" class="form-check-input" checked>
+                <label for="family" class="form-check-label">Family</label>
             </div>
             <div>
-                <input type="radio" name="travelerType" value="child" id="child" class="form-check-input">
-                <label for="child" class="form-check-label">Group of Friends</label>
+                <input type="radio" name="travelerType" value="friends" id="friends" class="form-check-input">
+                <label for="friends" class="form-check-label">Group of Friends</label>
             </div>
         </div>
 
@@ -81,7 +81,7 @@
 </div>
 
   <!-- Add Traveler Button -->
-<button id="addTravelerBtn" class="btn btn-primary w-20 mb-3">Add Traveler</button>
+<button id="addTravelerBtn" class="btn btn-primary  w-20 mb-3">Add Traveller</button>
 
 <!-- Traveler Form Section (Initially Hidden) -->
 <div id="travelerForm" class="mb-3 p-3 border rounded bg-white position-relative" style="display: none; max-width: 1000px;">
@@ -158,7 +158,7 @@
         </div>
     </div>
 
-    <button id="saveTravelerBtn" class="btn btn-success btn-sm mt-3">Save Traveler</button>
+    <button id="saveTravelerBtn" class="btn btn-success btn-sm mt-3">Save Traveller</button>
 </div>
 
 
