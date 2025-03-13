@@ -12,19 +12,19 @@ class Back_DestinationController extends Controller
     public function index()
     {
         $destinations = Destination::all(); 
-        return view('backend.admin-dashboard.tour-destination.index', compact('destinations'));
+        return view('backend.destination.index', compact('destinations'));
     }
 
     public function create()
     {
-        return view('backend.admin-dashboard.tour-destination.create');
+        return view('backend.destination.create');
     }
 
     public function show($id)
     {
         $destination = Destination::findOrFail($id);
 
-        return view('backend.admin-dashboard.tour-destination.show', compact('destination'));
+        return view('backend.destination.show', compact('destination'));
     }
 
 
@@ -58,7 +58,7 @@ class Back_DestinationController extends Controller
     public function edit($id)
     {
         $destination = Destination::findOrFail($id);
-        return view('backend.admin-dashboard.tour-destination.edit', compact('destination'));
+        return view('backend.destination.edit', compact('destination'));
     }
 
     // Update an existing destination

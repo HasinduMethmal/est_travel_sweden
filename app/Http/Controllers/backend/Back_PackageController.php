@@ -13,19 +13,19 @@ class Back_PackageController extends Controller
     {
         $packages = Package::all();
 
-        return view('backend.admin-dashboard.tour-package.index', compact('packages'));
+        return view('backend.package.index', compact('packages'));
     }
 
     public function show($id)
     {
         $package = Package::findOrFail($id);
 
-        return view('backend.admin-dashboard.tour-package.show', compact('package'));
+        return view('backend.package.show', compact('package'));
     }
 
     public function create()
     {
-        return view('backend.admin-dashboard.tour-package.create');
+        return view('backend.package.create');
     }
 
     public function store(Request $request)
@@ -53,7 +53,7 @@ class Back_PackageController extends Controller
     {
         $package = Package::findOrFail($id);
 
-        return view('backend.admin-dashboard.tour-package.edit', compact('package'));
+        return view('backend.package.edit', compact('package'));
     }
 
     public function update(Request $request, $id)

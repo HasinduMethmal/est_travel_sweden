@@ -12,12 +12,12 @@ class Back_BlogController extends Controller
     public function index()
     {
         $blogs = Blog::all(); 
-        return view('backend.admin-dashboard.blog.index', compact('blogs')); 
+        return view('backend.blog.index', compact('blogs')); 
     }
 
     public function create()
     {
-        return view('backend.admin-dashboard.blog.create');
+        return view('backend.blog.create');
     }
 
     public function store(Request $request)
@@ -25,7 +25,7 @@ class Back_BlogController extends Controller
         $request->validate([
             'description' => 'required|string',
             'topic' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5012',
         ]);
 
         if ($request->hasFile('image')) {
@@ -44,7 +44,7 @@ class Back_BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::findOrFail($id); 
-        return view('backend.admin-dashboard.blog.edit', compact('blog')); 
+        return view('backend.blog.edit', compact('blog')); 
     }
 
     public function update(Request $request, $id)
@@ -52,7 +52,7 @@ class Back_BlogController extends Controller
         $request->validate([
             'description' => 'required|string',
             'topic' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5012',
         ]);
 
         $blog = Blog::findOrFail($id);

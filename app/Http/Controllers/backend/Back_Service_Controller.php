@@ -13,12 +13,12 @@ class Back_Service_Controller extends Controller
     {
         $services = Service::all(); 
         
-        return view('backend.admin-dashboard.tour-service.index', compact('services'));
+        return view('backend.service.index', compact('services'));
     }
 
     public function create()
     {
-        return view('backend.admin-dashboard.tour-service.create');
+        return view('backend.service.create');
     }
 
     public function store(Request $request)
@@ -49,7 +49,7 @@ class Back_Service_Controller extends Controller
     public function edit($id)
     {
         $service = Service::findOrFail($id);
-        return view('backend.admin-dashboard.tour-service.edit', compact('service'));
+        return view('backend.service.edit', compact('service'));
     }
 
     public function update(Request $request, $id)

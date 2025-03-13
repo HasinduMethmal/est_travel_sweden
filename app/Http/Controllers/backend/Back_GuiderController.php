@@ -17,19 +17,19 @@ class Back_GuiderController extends Controller
             return $query->where('email', 'like', '%' . $email . '%');
         })->paginate(10); 
     
-        return view('backend.admin-dashboard.tour-guider.index', compact('guiders'));
+        return view('backend.guider.index', compact('guiders'));
     }
 
     public function show($id)
     {
         $guider = Guider::findOrFail($id);
 
-        return view('backend.admin-dashboard.tour-guider.show', compact('guider'));
+        return view('backend.guider.show', compact('guider'));
     }
 
     public function create()
     {
-        return view('backend.admin-dashboard.tour-guider.create');
+        return view('backend.guider.create');
     }
 
     public function store(Request $request)
@@ -62,7 +62,7 @@ class Back_GuiderController extends Controller
         $guider = Guider::findOrFail($id);
 
         
-        return view('backend.admin-dashboard.tour-guider.edit', compact('guider'));
+        return view('backend.guider.edit', compact('guider'));
     }
 
     public function update(Request $request, $id)

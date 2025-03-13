@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\backend\Auth\AuthController;
 use App\Http\Controllers\backend\Back_BlogController;
 use App\Http\Controllers\backend\Back_DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -10,7 +10,6 @@ use App\Http\Controllers\backend\Back_DestinationController;
 use App\Http\Controllers\backend\Back_GalleryController;
 use App\Http\Controllers\backend\Back_Service_Controller;
 use App\Http\Controllers\Frontend\AboutController;
-use App\Http\Controllers\Frontend\ActivityController;
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\BooknowController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -19,16 +18,17 @@ use App\Http\Controllers\Frontend\GalleryController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\PricePackageController;
 use App\Http\Controllers\Frontend\ServiceController;
-use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\TourguideController;
 use App\Http\Controllers\Frontend\BookingController;
 use App\Http\Controllers\Frontend\Auth\UserAuthController;
 
 
 
+Route::prefix('user')->group(function(){
+    Route::get('/login', [UserAuthController::class, 'showLogin'])->name('user.login');
+    Route::get('/register', [UserAuthController::class, 'showRegister'])->name('user.register');
 
-Route::get('/user/login', [UserAuthController::class, 'showLogin'])->name('user.login');
-Route::get('/user/register', [UserAuthController::class, 'showRegister'])->name('user.register');
+});
 
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [AuthController::class, 'showLoginForm'])->name('loginForm');

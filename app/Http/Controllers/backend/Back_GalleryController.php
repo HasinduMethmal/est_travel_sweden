@@ -14,13 +14,13 @@ class Back_GalleryController extends Controller
     {
         $images = Gallery::all();
 
-        return view('backend.admin-dashboard.gallery.index', compact('images'));
+        return view('backend.gallery.index', compact('images'));
     }
 
    
     public function create()
     {
-        return view('backend.admin-dashboard.gallery.create');
+        return view('backend.gallery.create');
     }
 
   
@@ -28,7 +28,7 @@ class Back_GalleryController extends Controller
     {
         $request->validate([
             'images' => 'required|array', 
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:40960', 
         ]);
 
         foreach ($request->file('images') as $image) {
