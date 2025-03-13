@@ -14,13 +14,13 @@ class Back_GalleryController extends Controller
     {
         $images = Gallery::all();
 
-        return view('backend.admin-dashboard.gallery.index', compact('images'));
+        return view('backend.gallery.index', compact('images'));
     }
 
    
     public function create()
     {
-        return view('backend.admin-dashboard.gallery.create');
+        return view('backend.gallery.create');
     }
 
   

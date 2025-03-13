@@ -12,12 +12,12 @@ class Back_BlogController extends Controller
     public function index()
     {
         $blogs = Blog::all(); 
-        return view('backend.admin-dashboard.blog.index', compact('blogs')); 
+        return view('backend.blog.index', compact('blogs')); 
     }
 
     public function create()
     {
-        return view('backend.admin-dashboard.blog.create');
+        return view('backend.blog.create');
     }
 
     public function store(Request $request)
@@ -44,7 +44,7 @@ class Back_BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::findOrFail($id); 
-        return view('backend.admin-dashboard.blog.edit', compact('blog')); 
+        return view('backend.blog.edit', compact('blog')); 
     }
 
     public function update(Request $request, $id)
