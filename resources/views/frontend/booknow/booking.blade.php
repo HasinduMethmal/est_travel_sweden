@@ -3,12 +3,13 @@
 @section ('title', 'Home')
 
 @section('content')
-<div class="d-flex justify-content-center align-items-center vh-300">
+
+<div class="d-flex justify-content-center align-items-center vh-400" style="margin-bottom:60px;margin-top:30px;">
     <div class="container p-4 bg-light shadow-lg rounded" style="max-width: 1000px;">
 
     <div class="p-4 mb-4 rounded shadow" style="background-color: #e9f6f9; color: black;">
     <!-- Tour Name -->
-    <h2 class="mb-3 text-center">{{ $packages->name }}</h2>
+    <h3 class="mb-3 text-center">{{ $packages->name }}</h3>
     
     <!-- Horizontal Line -->
     <hr class="mb-4 border-dark">

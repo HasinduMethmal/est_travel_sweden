@@ -22,6 +22,10 @@ Destination Area
 
     <section class="position-relative overflow-hidden space" id="destination-sec">
         <div class="container">
+        <div class="title-area text-center">
+                <span class="sub-title">Start Your Journey Today</span>
+                <h2 class="sec-title">Explore Our Services</h2><br>
+            </div>
             <div class="row gy-4 gx-4">
                 <div class="row">
                     @foreach($services as $service)

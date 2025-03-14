@@ -29,6 +29,11 @@
 .header-button .th-btn::after {
     display: none !important; 
 }
+
+.th-header {
+    padding: 0px 0 !important; /* Reduce vertical padding */
+    height: auto; /* Let it adjust dynamically */
+}
 </style>
 
 
@@ -109,34 +114,29 @@
     </div>
 </div>
 
-<header class="th-header header-layout1 ">
+<header class="th-header header-layout1">
     <div class="header-top">
         <div class="sticky-wrapper">
             <div class="menu-area">
                 <div class="container th-container">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-auto">
-                            <div class="header-logo">
+                    <div class="row align-items-center">
+                        <!-- Logo Section -->
+                        <div class="col-auto me-3"> <!-- Reduced space with me-3 -->
+                            <div class="header-logo" style="margin-left: 160px !important;">
                                 <a href="home-travel.html">
-                                    <img src="frontend/assets/img/besttime-travel.png" alt="Tourm" style="width: 100px; height: auto;">
+                                    <img src="frontend/assets/img/besttime-travel.png" alt="Tourm" style="width: 110px; height: auto; max-height: 160px; object-fit: contain;">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-auto me-xl-auto">
-                    
+
+                        <!-- Navigation Section (Center) -->
+                        <div class="col d-flex justify-content-center align-items-center" style="margin-left: -380px !important;">
                             <nav class="main-menu d-none d-xl-inline-block">
-                                <ul>
-                                    <li >
-                                        <a class="active" href="/">Home</a>
-                                   
-                                    </li>
+                                <ul class="d-flex gap-2 align-items-center">
+                                    <li><a class="active" href="/">Home</a></li>
                                     <li><a href="{{ route('aboutUs') }}">About Us</a></li>
-                                    <li class="menu-item">
-                                        <a href="{{ route('destination.destination') }}">Destination</a>
-                                    </li>
-                                    <li class="menu-item-">
-                                        <a href="{{ route('services.services') }}">Service</a>                                        
-                                    </li>                
+                                    <li class="menu-item"><a href="{{ route('destination.destination') }}">Destination</a></li>
+                                    <li class="menu-item"><a href="{{ route('services.services') }}">Service</a></li>                
                                     <li class="menu-item-has-children">
                                         <a href="#">Pages</a>
                                         <ul class="sub-menu">
@@ -145,21 +145,26 @@
                                             <li><a href="{{route('pricepackage.pricepackage')}}">Price Packages</a></li>                                         
                                         </ul>
                                     </li>
-                                    <li ><a href="{{route('blog.blog')}}">Blog</a></li>
+                                    <li><a href="{{route('blog.blog')}}">Blog</a></li>
                                     <li><a href="{{ route('contact') }}">Contact us</a></li>
                                 </ul>
                             </nav>
-                            <button type="button" class="th-menu-toggle d-block d-xl-none"><i class="far fa-bars" style="font-size:17px;"></i></button>
                         </div>
-                        <div class="col-auto d-none d-xl-block">
-                            <div class="header-button">
-                                <a href="{{ route('booknow') }}" class="th-btn style1" style=" font-size:17px;">Book Now<i class="fas fa-arrow-right" style="font-size:17px;"></i></button></a>
+
+                        <!-- Button Section (Right) -->
+                        <div class="col-auto ms-0"> <!-- Reduced space with ms-3 -->
+                            <div class="header-button d-none d-xl-block">
+                                <a href="{{ route('booknow') }}" class="th-btn style1" style="font-size:17px;margin-left: -290px !important;">Book Now
+                                    <i class="fas fa-arrow-right" style="font-size:17px;"></i>
+                                </a>
                             </div>
                         </div>
+
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </header>
+
+

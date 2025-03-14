@@ -17,7 +17,7 @@
         <div class="w-1/2 p-8">
             <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Sign Up</h2>
             <p class="text-center text-gray-600 text-sm">
-                    Already have an account? <a href="" class="text-blue-500 font-bold">Login</a>
+                    Already have an account? <a href="{{ route('user.login') }}" class="text-blue-500 font-bold">Login</a>
                 </p>
             <form action="" method="POST">
                 @csrf
@@ -42,7 +42,7 @@
 
         <!-- Right Side: Image Display -->
         <div class="w-1/2">
-            <img src="frontend/images/register.jpg" alt="Signup Image" class="w-full h-full object-cover">
+            <img src="{{ asset('frontend/images/register.png') }}" alt="Signup Image" class="w-full h-full object-cover">
         </div>
     </div>
 

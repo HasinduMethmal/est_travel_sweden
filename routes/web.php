@@ -131,7 +131,7 @@ Route::prefix('destination')->group(function(){
 });
 Route::prefix('tour-guide')->group(function(){
     Route::get('/',[TourguideController::class,'tourguide'])->name('tourguide.tourguide');
-    Route::get('/details',[TourguideController::class,'tourguideDetails'])->name('tourguide.details');
+    Route::get('/details/{id}',[TourguideController::class,'show'])->name('tourguide.details');
 
 });
 Route::prefix('price-package')->group(function(){
@@ -149,4 +149,6 @@ Route::prefix('service')->group(function(){
 
 Route::prefix('blog')->group(function(){
     Route::get('/',[BlogController::class,'index'])->name('blog.blog');
+    Route::get('/details/{id}',[BlogController::class,'show'])->name('blog.details');
+    
 });

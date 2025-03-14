@@ -11,6 +11,7 @@
 ============================== -->
 <div class="breadcumb-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('frontend/images/destination_2.png'); background-size: cover; background-position: center center; height: 400px;">
         <div class="container">
+       
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Destination</h1>
                 <ul class="breadcumb-menu">
@@ -24,6 +25,10 @@ Product Area
 ==============================-->
     <section class="space">
         <div class="container">
+        <div class="title-area text-center">
+                <span class="sub-title">Start Your Journey Today</span>
+                <h2 class="sec-title">Discover the Best Places </h2>
+            </div>
             <div class="th-sort-bar">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-md-4">
