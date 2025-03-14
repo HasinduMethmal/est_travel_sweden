@@ -585,5 +585,14 @@ Product Area
             </div>
 
         </div>
+        <div class="shape-mockup shape1 d-none d-xxl-block" data-bottom="17%" data-right="9%">
+            <img src="{{asset('frontend/assets/img/shape/shape_1.png')}}" alt="shape">
+        </div>
+        <div class="shape-mockup shape2 d-none d-xl-block" data-bottom="8%" data-right="8%">
+            <img src="{{asset('frontend/assets/img/shape/shape_2.png')}}" alt="shape">
+        </div>
+        <div class="shape-mockup shape3 d-none d-xxl-block" data-bottom="15%" data-right="4%">
+            <img src="{{asset('frontend/assets/img/shape/shape_3.png')}}" alt="shape">
+        </div>
     </section>
     @endsection

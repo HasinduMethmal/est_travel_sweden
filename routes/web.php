@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\backend\Auth\AuthController;
 use App\Http\Controllers\backend\Back_BlogController;
 use App\Http\Controllers\backend\Back_DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -21,26 +20,83 @@ use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\TourguideController;
 use App\Http\Controllers\Frontend\BookingController;
 use App\Http\Controllers\Frontend\Auth\UserAuthController;
+use App\Http\Controllers\backend\Auth\AdminAuthController;
+use App\Http\Controllers\Frontend\DashboardController;
 
-
+/*--------------------------------frontend------------------------------------*/
 
 Route::prefix('user')->group(function(){
-    Route::get('/login', [UserAuthController::class, 'showLogin'])->name('user.login');
-    Route::get('/register', [UserAuthController::class, 'showRegister'])->name('user.register');
+    Route::get('/', [UserAuthController::class, 'showLoginForm'])->name('user.loginForm');
+    Route::post('/login', [UserAuthController::class, 'login'])->name('user.login');
+    Route::post('/logout', [UserAuthController::class, 'logout'])->name('user.logout');
+    Route::get('/signup', [UserAuthController::class, 'showSignupForm'])->name('user.signupForm');
+    Route::post('/signup', [UserAuthController::class, 'register'])->name('user.signup');
+});
+
+Route::middleware(['auth'])->prefix('user')->group(function () {
+    Route::get('/index/{id}',[DashboardController::class,'index'])->name('user.index');
+});
+
+Route::get('/booking', [BookingController::class, 'show'])->name('booking');
+
+Route::get('/',[IndexController::class,'index']);
+
+Route::get('/aboutUs',[AboutController::class,'index'])->name('aboutUs');
+
+Route::get('/gallery',[GalleryController::class,'index'])->name('gallery');
+
+Route::get('/booknow',[BooknowController::class,'index'])->name('booknow');
+
+Route::prefix('destination')->group(function(){
+    Route::get('/',[DestinationController::class,'destination'])->name('destination.destination');
+    Route::get('/details/{id}',[DestinationController::class,'show'])->name('destination.details');
 
 });
 
-Route::prefix('dashboard')->group(function(){
-    Route::get('/', [AuthController::class, 'showLoginForm'])->name('loginForm');
-    Route::post('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signupForm');
-    Route::post('/signup', [AuthController::class, 'register'])->name('signup');
+Route::prefix('tour-guide')->group(function(){
+    Route::get('/',[TourguideController::class,'tourguide'])->name('tourguide.tourguide');
+    Route::get('/details',[TourguideController::class,'tourguideDetails'])->name('tourguide.details');
+
+});
+
+Route::prefix('price-package')->group(function(){
+    Route::get('/',[PricePackageController::class,'pricepackage'])->name('pricepackage.pricepackage');
+ 
+
+});
+
+Route::get('/contact',[ContactController::class,'index'])->name('contact');
+
+Route::prefix('service')->group(function(){
+    Route::get('/',[ServiceController::class,'service'])->name('services.services');
+    Route::get('/details',[ServiceController::class,'serviceDetails'])->name('services.details');
+
+});
+
+Route::prefix('blog')->group(function(){
+    Route::get('/',[BlogController::class,'index'])->name('blog.blog');
 });
 
 
-Route::middleware(['auth','isadmin'])->prefix('dashboard')->group(function () {
-        Route::get('/index',[Back_DashboardController::class,'index'])->name('dashboard.index');
+
+
+
+
+
+/*--------------------------------backend------------------------------------*/
+
+
+Route::prefix('admin')->group(function(){
+    Route::get('/', [AdminAuthController::class, 'showLoginForm'])->name('loginForm');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('login');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+    Route::get('/signup', [AdminAuthController::class, 'showSignupForm'])->name('signupForm');
+    Route::post('/signup', [AdminAuthController::class, 'register'])->name('signup');
+});
+
+
+Route::middleware(['auth','isadmin'])->prefix('admin')->group(function () {
+        Route::get('/index',[Back_DashboardController::class,'index'])->name('admin.index');
         Route::prefix('guider')->group(function(){
             Route::get('/',[Back_GuiderController::class,'index'])->name('back_guider.index');
             Route::get('/create',[Back_GuiderController::class,'create'])->name('back_guider.create');
@@ -106,47 +162,3 @@ Route::middleware(['auth','isadmin'])->prefix('dashboard')->group(function () {
 });
 
 
-
-Route::get('/booking/{id}', [BookingController::class, 'show'])->name('booking');
-
-
-
-
-
-
-
-
-
-Route::get('/',[IndexController::class,'index']);
-
-Route::get('/aboutUs',[AboutController::class,'index'])->name('aboutUs');
-
-Route::get('/gallery',[GalleryController::class,'index'])->name('gallery');
-Route::get('/booknow',[BooknowController::class,'index'])->name('booknow');
-
-Route::prefix('destination')->group(function(){
-    Route::get('/',[DestinationController::class,'destination'])->name('destination.destination');
-    Route::get('/details/{id}',[DestinationController::class,'show'])->name('destination.details');
-
-});
-Route::prefix('tour-guide')->group(function(){
-    Route::get('/',[TourguideController::class,'tourguide'])->name('tourguide.tourguide');
-    Route::get('/details',[TourguideController::class,'tourguideDetails'])->name('tourguide.details');
-
-});
-Route::prefix('price-package')->group(function(){
-    Route::get('/',[PricePackageController::class,'pricepackage'])->name('pricepackage.pricepackage');
- 
-
-});
-
-Route::get('/contact',[ContactController::class,'index'])->name('contact');
-Route::prefix('service')->group(function(){
-    Route::get('/',[ServiceController::class,'service'])->name('services.services');
-    Route::get('/details',[ServiceController::class,'serviceDetails'])->name('services.details');
-
-});
-
-Route::prefix('blog')->group(function(){
-    Route::get('/',[BlogController::class,'index'])->name('blog.blog');
-});
