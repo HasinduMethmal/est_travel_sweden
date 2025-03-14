@@ -19,9 +19,9 @@
         <div class="w-1/2 p-8">
             <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Login</h2>
             <p class="text-center text-gray-600 text-sm">
-                    Don't have an account? <a href="{{ route('signup') }}" class="text-blue-500 font-bold">Sign Up</a>
+                    Don't have an account? <a href="{{ route('user.signup') }}" class="text-blue-500 font-bold">Sign Up</a>
                 </p>
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('user.login') }}" method="POST">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>

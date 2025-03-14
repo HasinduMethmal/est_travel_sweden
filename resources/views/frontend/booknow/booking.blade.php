@@ -8,7 +8,7 @@
 
     <div class="p-4 mb-4 rounded shadow" style="background-color: #e9f6f9; color: black;">
     <!-- Tour Name -->
-    <h2 class="mb-3 text-center">{{ $packages->name }}</h2>
+    <h2 class="mb-3 text-center"></h2>
     
     <!-- Horizontal Line -->
     <hr class="mb-4 border-dark">
@@ -24,10 +24,10 @@
 
         <!-- Values Column -->
         <div class="col-md-8 d-flex flex-column" style="color: grey !important;">
-    <p style="color: inherit !important;">{{ $packages->destination }}</p>
-    <p style="color: inherit !important;">{{ $packages->description }}</p>
-    <p style="color: inherit !important;">${{ number_format($packages->price, 2) }}</p>
-    <p style="color: inherit !important;">{{ $packages->duration }} Days</p>
+    <p style="color: inherit !important;"></p>
+    <p style="color: inherit !important;"></p>
+    <p style="color: inherit !important;"></p>
+    <p style="color: inherit !important;"> Days</p>
 </div>
 
 
@@ -168,6 +168,15 @@
 
 
     </div>
+</div>
+<div class="shape-mockup shape1 d-none d-xxl-block" data-bottom="30%" data-right="9%">
+    <img src="{{asset('frontend/assets/img/shape/shape_1.png')}}" alt="shape">
+</div>
+<div class="shape-mockup shape2 d-none d-xl-block" data-bottom="8%" data-right="8%">
+    <img src="{{asset('frontend/assets/img/shape/shape_2.png')}}" alt="shape">
+</div>
+<div class="shape-mockup shape3 d-none d-xxl-block" data-bottom="15%" data-right="4%">
+    <img src="{{asset('frontend/assets/img/shape/shape_3.png')}}" alt="shape">
 </div>
 
 <!-- jQuery and Bootstrap -->

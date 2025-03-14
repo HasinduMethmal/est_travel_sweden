@@ -2,7 +2,7 @@
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <div class="app-brand demo " style="padding-top:5px;">
-    <a href="{{route('dashboard.index')}}" class="app-brand-link" style="display: inline-block; text-align: center; width: 100%;">
+    <a href="{{route('admin.index')}}" class="app-brand-link" style="display: inline-block; text-align: center; width: 100%;">
       <img class="img-fluid for-light for-dark" src="{{asset('backend/assets/img/besttime-travel.png')}}" style="width: 100px; vertical-align: middle;">
     </a>
   

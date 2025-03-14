@@ -19,24 +19,58 @@
             <p class="text-center text-gray-600 text-sm">
                     Already have an account? <a href="" class="text-blue-500 font-bold">Login</a>
                 </p>
-            <form action="" method="POST">
+            <form action="{{ route('user.signup') }}" method="POST">
                 @csrf
+
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                    <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                    <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                    <input type="password" name="password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" required>
-                </div>
-                <div class="mb-6">
+                    <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username</label>
+                    <input
+                      type="text"
+                      class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                      id="username"
+                      name="name"
+                      placeholder="Enter your username"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input
+                      type="email"
+                      class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4 form-password-toggle">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                      name="password"
+                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                      minlength="5"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4 form-password-toggle">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password_confirmation">Confirm Password</label>
+                    <input
+                      type="password"
+                      id="password_confirmation"
+                      class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                      name="password_confirmation"
+                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                      minlength="5"
+                      required
+                    />
+                  </div>
+                  <div class="mb-6">
                     <button type="submit" class="w-1/4 bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600">Sign Up</button>
                 </div>
-                
             </form>
         </div>
 

@@ -52,12 +52,12 @@
                     <div class="header-links">
                         <ul>
                             <li>
-                                <a href="{{ route('user.register') }}" class="popup-content">
+                                <a href="{{ route('user.signup') }}"">
                                     Register <i class="fa-regular fa-user"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('user.login') }}" class="popup-content">
+                                <a href="{{ route('user.loginForm') }}" >
                                     Sign In <i class="fa-regular fa-user"></i>
                                 </a>
                             </li>
@@ -153,7 +153,7 @@
                         </div>
                         <div class="col-auto d-none d-xl-block">
                             <div class="header-button">
-                                <a href="{{ route('booknow') }}" class="th-btn style1" style=" font-size:17px;">Book Now<i class="fas fa-arrow-right" style="font-size:17px;"></i></button></a>
+                                <a href="{{ route('booking')}}" class="th-btn style1" style=" font-size:17px;">Book Now<i class="fas fa-arrow-right" style="font-size:17px;"></i></button></a>
                             </div>
                         </div>
                     </div>

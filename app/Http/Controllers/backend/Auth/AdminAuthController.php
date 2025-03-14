@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class AuthController extends Controller{
+class AdminAuthController extends Controller{
 
     public function showLoginForm()
     {
@@ -16,14 +16,14 @@ class AuthController extends Controller{
             return redirect()->route('dashboard.index');
         }
         
-        return view('auth.login');
+        return view('backend.auth.login');
     }
     
 
 
     public function showSignupForm(){
 
-        return view('auth.signup');
+        return view('backend.auth.signup');
     }
 
 
@@ -56,7 +56,7 @@ class AuthController extends Controller{
         if (Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->intended(route('dashboard.index'))->with('message', 'Welcome ' . Auth::user()->name);
+            return redirect()->intended(route('admin.index'))->with('message', 'Welcome ' . Auth::user()->name);
         }
 
         return back()->withErrors([
