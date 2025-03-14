@@ -51,8 +51,8 @@
                                 <h1 class="hero-title" data-ani="slideinup" data-ani-delay="0.4s">
                                     Explore beauty of the whole world </h1>
                                 <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
-                                    <a href="tour.html" class="th-btn th-icon">Explore Tours</a>
-                                    <a href="service.html" class="th-btn style2 th-icon">Our Services</a>
+                                    <a href="{{ route('booknow') }}"class="th-btn th-icon">Explore Tours</a>
+                                    <a href="{{ route('services.services') }}" class="th-btn style2 th-icon">Our Services</a>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                                         <span class="destination-subtitle">{{$destination -> location}}</span>
                                     </div>
                                     <div class="">
-                                        <a href="destination-details.html" class="th-btn style2 th-icon">View Detail</a>
+                                        <a href="{{ route('destination.details', ['id' => $destination->id]) }}" class="th-btn style2 th-icon">View Detail</a>
                                     </div>
                                 </div>
                             </div>

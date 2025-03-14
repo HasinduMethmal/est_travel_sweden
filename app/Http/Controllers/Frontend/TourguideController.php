@@ -17,4 +17,9 @@ class TourguideController extends Controller{
         
         return view('frontend.tour-guide.tourguide-details');
     }
+    public function show($id)
+    {
+        $guiders = Guider::findOrFail($id);
+        return view('frontend.tour-guide.tourguide-details', compact('guiders'));
+    }
 }
