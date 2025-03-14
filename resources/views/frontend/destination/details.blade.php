@@ -57,55 +57,33 @@
                     <div class="widget  ">
                         <h3 class="widget_title">Recent Blogs</h3>
                         <div class="recent-post-wrap">
+                        @foreach(App\Models\Blog::latest()->take(3)->get() as $blog)
                             <div class="recent-post">
                                 <div class="media-img">
-                                    <a href="blog-details.html"><img src="{{asset('frontend/assets/img/blog/recent-post-1-1.jpg')}}" alt="Blog Image"></a>
+                                    <a href="blog-details.html"><img src="{{asset('storage/'.$blog->image)}}" alt="Blog Image"  style="width:80px;height:70px;"></a>
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Exploring The Green Spaces Of the island maldives</a></h4>
+                                    <h4 class="post-title"><a class="text-inherit" href="{{ route('blog.details', ['id' => $blog->id]) }}">{{$blog->topic}}</a></h4>
                                     <div class="recent-post-meta">
                                         <a href="blog.html"><i class="fa-regular fa-calendar"></i>22/6/ 2024</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="blog-details.html"><img src="{{asset('frontend/assets/img/blog/recent-post-1-2.jpg')}}" alt="Blog Image"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Harmony With Nature Of Belgium Tour and travle</a></h4>
-                                    <div class="recent-post-meta">
-                                        <a href="blog.html"><i class="fa-regular fa-calendar"></i>25/6/ 2024</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="recent-post">
-                                <div class="media-img">
-                                    <a href="blog-details.html"><img src="{{asset('frontend/assets/img/blog/recent-post-1-3.jpg')}}" alt="Blog Image"></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Exploring The Green Spaces Of Realar Residence</a></h4>
-                                    <div class="recent-post-meta">
-                                        <a href="blog.html"><i class="fa-regular fa-calendar"></i>27/6/ 2024</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                          
                         </div>
                     </div>
                 
-                    <div class="widget widget_offer  " data-bg-src="{{asset('frontend/assets/img/bg/widget_bg_1.jpg')}}">
+                    <div class="widget widget_offer  " data-bg-src="{{asset('frontend/images/support.jpg')}}"  style="width:410px;height:350px;">
                         <div class="offer-banner">
                             <div class="offer">
-                                <h6 class="box-title">Need Help? We Are Here To Help You</h6>
-                                <div class="banner-logo">
-                                    <img src="{{asset('frontend/assets/img/logo2.svg')}}" alt="Tourm">
-                                </div>
+                                <h6 class="box-title" style="margin-top:30px;">Need Help? We Are Here To Help You</h6>
+                               
                                 <div class="offer">
                                     <h6 class="offer-title">You Get Online support</h6>
                                     <a class="offter-num" href="+256214203215">+256 214 203 215</a>
                                 </div>
-                                <a href="contact.html" class="th-btn style2 th-icon">Read More</a>
+                                <a href="{{route('contact')}}"  class="th-btn style2 th-icon" style="margin-top:40px;">Read More</a>
                             </div>
                         </div>
                     </div>
